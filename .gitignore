@@ -35,16 +35,13 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-node_modules
 target
 dist
 logs
-public
 .cache
-.vscode
 .DS_Store
 .idea
-.next
 .yarn
 yarn-error.log
 npm-debug.log
+.vscode/extensions.json
