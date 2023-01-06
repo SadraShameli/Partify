@@ -5,15 +5,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export default function Main() {
     return (
         <>
-            <div className='divider pt-20' />
+            <div className='divider' />
             <footer className='container mt-28 mb-6'>
                 <div className='footer md:justify-around'>
-                    <div className='md:justify-items-center gap-y-5'>
+                    <div className='md:justify-items-center gap-y-5 '>
                         <div className='grid gap-y-2'>
                             <FontAwesomeIcon icon={faShoppingCart} />
-                            <span className='footer-title'>Partify</span>
+                            <span className='footer-title normal-case'>Partify</span>
                         </div>
-                        <div className='flex gap-4 w-60'>
+                        <div className='flex gap-4 w-72'>
                             <FontAwesomeIcon icon={faIdeal} />
                             <FontAwesomeIcon icon={faCcApplePay} />
                             <FontAwesomeIcon icon={faCcPaypal} />
@@ -23,13 +23,13 @@ export default function Main() {
                         </div>
                     </div>
                     <div>
-                        <span className='footer-title'>Company</span>
+                        <span className='footer-title normal-case'>Company</span>
                         <a className='link link-hover'>About us</a>
                         <a className='link link-hover'>Contact</a>
                         <a className='link link-hover'>Location</a>
                     </div>
                     <div>
-                        <span className='footer-title'>Legal</span>
+                        <span className='footer-title normal-case'>Legal</span>
                         <a className='link link-hover'>Terms of use</a>
                         <a className='link link-hover'>Privacy policy</a>
                         <a className='link link-hover'>Cookie policy</a>
