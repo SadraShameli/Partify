@@ -9,6 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-brands-svg-icons": "^6.2.1",
+    "@fortawesome/free-regular-svg-icons": "^6.2.1",
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
+    "@fortawesome/react-fontawesome": "latest",
     "@next/font": "13.1.1",
     "@types/node": "18.11.18",
     "@types/react": "18.0.26",
@@ -21,6 +26,7 @@
   "devDependencies": {
     "@tailwindcss/typography": "latest",
     "autoprefixer": "^10.4.13",
+    "daisyui": "^2.46.1",
     "eslint": "^8.31.0",
     "eslint-config-next": "^13.1.1",
     "postcss": "^8.4.20",

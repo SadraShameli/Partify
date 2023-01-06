@@ -1,19 +1,51 @@
+import { faIdeal, faCcAmex, faCcApplePay, faCcPaypal, faCcMastercard, faCcVisa, faInstagram, faFacebook, faWhatsapp, faTelegram } from '@fortawesome/free-brands-svg-icons'
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 export default function Main() {
     return (
-        <footer className='pt-40 pb-5'>
-            <div className='border-t border-slate-200 dark:border-slate-700'>
-                <div className='container'>
-                    <div className='prose prose-slate dark:prose-invert max-w-none'>
-                        <div className='pt-5 pb-5'>
-                            <h2>Partify</h2>
-                            <p>Thank you for visiting Partify!</p>
+        <>
+            <div className='divider pt-20' />
+            <footer className='container mt-28 mb-6'>
+                <div className='footer md:justify-around'>
+                    <div className='md:justify-items-center gap-y-5'>
+                        <div className='grid gap-y-2'>
+                            <FontAwesomeIcon icon={faShoppingCart} />
+                            <span className='footer-title'>Partify</span>
                         </div>
-                        <div className='pt-5 border-t border-slate-200 dark:border-slate-200/5'>
-                            <p>Copyright © 2023 Partify.</p>
+                        <div className='flex gap-4 w-60'>
+                            <FontAwesomeIcon icon={faIdeal} />
+                            <FontAwesomeIcon icon={faCcApplePay} />
+                            <FontAwesomeIcon icon={faCcPaypal} />
+                            <FontAwesomeIcon icon={faCcMastercard} />
+                            <FontAwesomeIcon icon={faCcVisa} />
+                            <FontAwesomeIcon icon={faCcAmex} />
                         </div>
                     </div>
+                    <div>
+                        <span className='footer-title'>Company</span>
+                        <a className='link link-hover'>About us</a>
+                        <a className='link link-hover'>Contact</a>
+                        <a className='link link-hover'>Location</a>
+                    </div>
+                    <div>
+                        <span className='footer-title'>Legal</span>
+                        <a className='link link-hover'>Terms of use</a>
+                        <a className='link link-hover'>Privacy policy</a>
+                        <a className='link link-hover'>Cookie policy</a>
+                    </div>
                 </div>
-            </div>
-        </footer>
+                <div className='divider mt-28' />
+                <div className='flex flex-wrap gap-10 justify-around md:justify-between'>
+                    <p>Copyright © 2023 Partify</p>
+                    <div className='flex gap-10 w-52'>
+                        <FontAwesomeIcon icon={faInstagram} />
+                        <FontAwesomeIcon icon={faFacebook} />
+                        <FontAwesomeIcon icon={faWhatsapp} />
+                        <FontAwesomeIcon icon={faTelegram} />
+                    </div >
+                </div>
+            </footer >
+        </>
     );
 }

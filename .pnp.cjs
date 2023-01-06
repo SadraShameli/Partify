@@ -28,12 +28,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
+            ["@fortawesome/fontawesome-svg-core", "npm:6.2.1"],\
+            ["@fortawesome/free-brands-svg-icons", "npm:6.2.1"],\
+            ["@fortawesome/free-regular-svg-icons", "npm:6.2.1"],\
+            ["@fortawesome/free-solid-svg-icons", "npm:6.2.1"],\
+            ["@fortawesome/react-fontawesome", "virtual:6969c2251fb77007b31e62993dcca794e76d7169a69f170bd2be146d87a4e55f0be59b4256d2c3596a3014e144e9f27a0832cdad05e10d2e178de42abd435da0#npm:0.2.0"],\
             ["@next/font", "npm:13.1.1"],\
             ["@tailwindcss/typography", "virtual:6969c2251fb77007b31e62993dcca794e76d7169a69f170bd2be146d87a4e55f0be59b4256d2c3596a3014e144e9f27a0832cdad05e10d2e178de42abd435da0#npm:0.5.8"],\
             ["@types/node", "npm:18.11.18"],\
             ["@types/react", "npm:18.0.26"],\
             ["@types/react-dom", "npm:18.0.10"],\
             ["autoprefixer", "virtual:6969c2251fb77007b31e62993dcca794e76d7169a69f170bd2be146d87a4e55f0be59b4256d2c3596a3014e144e9f27a0832cdad05e10d2e178de42abd435da0#npm:10.4.13"],\
+            ["daisyui", "virtual:6969c2251fb77007b31e62993dcca794e76d7169a69f170bd2be146d87a4e55f0be59b4256d2c3596a3014e144e9f27a0832cdad05e10d2e178de42abd435da0#npm:2.46.1"],\
             ["eslint", "npm:8.31.0"],\
             ["eslint-config-next", "virtual:6969c2251fb77007b31e62993dcca794e76d7169a69f170bd2be146d87a4e55f0be59b4256d2c3596a3014e144e9f27a0832cdad05e10d2e178de42abd435da0#npm:13.1.1"],\
             ["next", "virtual:6969c2251fb77007b31e62993dcca794e76d7169a69f170bd2be146d87a4e55f0be59b4256d2c3596a3014e144e9f27a0832cdad05e10d2e178de42abd435da0#npm:13.1.1"],\
@@ -81,6 +87,82 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["js-yaml", "npm:4.1.0"],\
             ["minimatch", "npm:3.1.2"],\
             ["strip-json-comments", "npm:3.1.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@fortawesome/fontawesome-common-types", [\
+        ["npm:6.2.1", {\
+          "packageLocation": "./.yarn/unplugged/@fortawesome-fontawesome-common-types-npm-6.2.1-0d35c18eaf/node_modules/@fortawesome/fontawesome-common-types/",\
+          "packageDependencies": [\
+            ["@fortawesome/fontawesome-common-types", "npm:6.2.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@fortawesome/fontawesome-svg-core", [\
+        ["npm:6.2.1", {\
+          "packageLocation": "./.yarn/unplugged/@fortawesome-fontawesome-svg-core-npm-6.2.1-d290dc12b5/node_modules/@fortawesome/fontawesome-svg-core/",\
+          "packageDependencies": [\
+            ["@fortawesome/fontawesome-svg-core", "npm:6.2.1"],\
+            ["@fortawesome/fontawesome-common-types", "npm:6.2.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@fortawesome/free-brands-svg-icons", [\
+        ["npm:6.2.1", {\
+          "packageLocation": "./.yarn/unplugged/@fortawesome-free-brands-svg-icons-npm-6.2.1-c96621f3ad/node_modules/@fortawesome/free-brands-svg-icons/",\
+          "packageDependencies": [\
+            ["@fortawesome/free-brands-svg-icons", "npm:6.2.1"],\
+            ["@fortawesome/fontawesome-common-types", "npm:6.2.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@fortawesome/free-regular-svg-icons", [\
+        ["npm:6.2.1", {\
+          "packageLocation": "./.yarn/unplugged/@fortawesome-free-regular-svg-icons-npm-6.2.1-6e0ced55b5/node_modules/@fortawesome/free-regular-svg-icons/",\
+          "packageDependencies": [\
+            ["@fortawesome/free-regular-svg-icons", "npm:6.2.1"],\
+            ["@fortawesome/fontawesome-common-types", "npm:6.2.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@fortawesome/free-solid-svg-icons", [\
+        ["npm:6.2.1", {\
+          "packageLocation": "./.yarn/unplugged/@fortawesome-free-solid-svg-icons-npm-6.2.1-ea5991f75e/node_modules/@fortawesome/free-solid-svg-icons/",\
+          "packageDependencies": [\
+            ["@fortawesome/free-solid-svg-icons", "npm:6.2.1"],\
+            ["@fortawesome/fontawesome-common-types", "npm:6.2.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@fortawesome/react-fontawesome", [\
+        ["npm:0.2.0", {\
+          "packageLocation": "./.yarn/cache/@fortawesome-react-fontawesome-npm-0.2.0-a36215138f-f652a0c217.zip/node_modules/@fortawesome/react-fontawesome/",\
+          "packageDependencies": [\
+            ["@fortawesome/react-fontawesome", "npm:0.2.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:6969c2251fb77007b31e62993dcca794e76d7169a69f170bd2be146d87a4e55f0be59b4256d2c3596a3014e144e9f27a0832cdad05e10d2e178de42abd435da0#npm:0.2.0", {\
+          "packageLocation": "./.yarn/__virtual__/@fortawesome-react-fontawesome-virtual-120eef76bb/0/cache/@fortawesome-react-fontawesome-npm-0.2.0-a36215138f-f652a0c217.zip/node_modules/@fortawesome/react-fontawesome/",\
+          "packageDependencies": [\
+            ["@fortawesome/react-fontawesome", "virtual:6969c2251fb77007b31e62993dcca794e76d7169a69f170bd2be146d87a4e55f0be59b4256d2c3596a3014e144e9f27a0832cdad05e10d2e178de42abd435da0#npm:0.2.0"],\
+            ["@fortawesome/fontawesome-svg-core", "npm:6.2.1"],\
+            ["@types/fortawesome__fontawesome-svg-core", null],\
+            ["@types/react", "npm:18.0.26"],\
+            ["prop-types", "npm:15.8.1"],\
+            ["react", "npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@fortawesome/fontawesome-svg-core",\
+            "@types/fortawesome__fontawesome-svg-core",\
+            "@types/react",\
+            "react"\
           ],\
           "linkType": "HARD"\
         }]\
@@ -1039,6 +1121,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["color", [\
+        ["npm:4.2.3", {\
+          "packageLocation": "./.yarn/cache/color-npm-4.2.3-4a23227581-0579629c02.zip/node_modules/color/",\
+          "packageDependencies": [\
+            ["color", "npm:4.2.3"],\
+            ["color-convert", "npm:2.0.1"],\
+            ["color-string", "npm:1.9.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["color-convert", [\
         ["npm:2.0.1", {\
           "packageLocation": "./.yarn/cache/color-convert-npm-2.0.1-79730e935b-79e6bdb9fd.zip/node_modules/color-convert/",\
@@ -1054,6 +1147,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/color-name-npm-1.1.4-025792b0ea-b044585952.zip/node_modules/color-name/",\
           "packageDependencies": [\
             ["color-name", "npm:1.1.4"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["color-string", [\
+        ["npm:1.9.1", {\
+          "packageLocation": "./.yarn/cache/color-string-npm-1.9.1-dc020e56be-c13fe7cff7.zip/node_modules/color-string/",\
+          "packageDependencies": [\
+            ["color-string", "npm:1.9.1"],\
+            ["color-name", "npm:1.1.4"],\
+            ["simple-swizzle", "npm:0.2.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -1106,6 +1210,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["css-selector-tokenizer", [\
+        ["npm:0.8.0", {\
+          "packageLocation": "./.yarn/cache/css-selector-tokenizer-npm-0.8.0-b6bad298a3-1eb7ca7d2c.zip/node_modules/css-selector-tokenizer/",\
+          "packageDependencies": [\
+            ["css-selector-tokenizer", "npm:0.8.0"],\
+            ["cssesc", "npm:3.0.0"],\
+            ["fastparse", "npm:1.1.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["cssesc", [\
         ["npm:3.0.0", {\
           "packageLocation": "./.yarn/cache/cssesc-npm-3.0.0-15ec56f86f-f8c4ababff.zip/node_modules/cssesc/",\
@@ -1120,6 +1235,36 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/csstype-npm-3.1.1-3857baf48b-1f7b4f5fdd.zip/node_modules/csstype/",\
           "packageDependencies": [\
             ["csstype", "npm:3.1.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["daisyui", [\
+        ["npm:2.46.1", {\
+          "packageLocation": "./.yarn/cache/daisyui-npm-2.46.1-f074f64a03-6385e1d322.zip/node_modules/daisyui/",\
+          "packageDependencies": [\
+            ["daisyui", "npm:2.46.1"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:6969c2251fb77007b31e62993dcca794e76d7169a69f170bd2be146d87a4e55f0be59b4256d2c3596a3014e144e9f27a0832cdad05e10d2e178de42abd435da0#npm:2.46.1", {\
+          "packageLocation": "./.yarn/__virtual__/daisyui-virtual-7ba518cec2/0/cache/daisyui-npm-2.46.1-f074f64a03-6385e1d322.zip/node_modules/daisyui/",\
+          "packageDependencies": [\
+            ["daisyui", "virtual:6969c2251fb77007b31e62993dcca794e76d7169a69f170bd2be146d87a4e55f0be59b4256d2c3596a3014e144e9f27a0832cdad05e10d2e178de42abd435da0#npm:2.46.1"],\
+            ["@types/autoprefixer", null],\
+            ["@types/postcss", null],\
+            ["autoprefixer", "virtual:6969c2251fb77007b31e62993dcca794e76d7169a69f170bd2be146d87a4e55f0be59b4256d2c3596a3014e144e9f27a0832cdad05e10d2e178de42abd435da0#npm:10.4.13"],\
+            ["color", "npm:4.2.3"],\
+            ["css-selector-tokenizer", "npm:0.8.0"],\
+            ["postcss", "npm:8.4.20"],\
+            ["postcss-js", "virtual:7ba518cec25df70b139cadd65896481443de61d996d5f48392cc05f8de2f2a11c2579e1626e1ad94b0bb849cb5a649a1928e6d69096c07782a5b186c58f439c3#npm:4.0.0"],\
+            ["tailwindcss", "virtual:6969c2251fb77007b31e62993dcca794e76d7169a69f170bd2be146d87a4e55f0be59b4256d2c3596a3014e144e9f27a0832cdad05e10d2e178de42abd435da0#npm:3.2.4"]\
+          ],\
+          "packagePeers": [\
+            "@types/autoprefixer",\
+            "@types/postcss",\
+            "autoprefixer",\
+            "postcss"\
           ],\
           "linkType": "HARD"\
         }]\
@@ -1909,6 +2054,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["fastparse", [\
+        ["npm:1.1.2", {\
+          "packageLocation": "./.yarn/cache/fastparse-npm-1.1.2-6a35154770-c4d199809d.zip/node_modules/fastparse/",\
+          "packageDependencies": [\
+            ["fastparse", "npm:1.1.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["fastq", [\
         ["npm:1.15.0", {\
           "packageLocation": "./.yarn/cache/fastq-npm-1.15.0-1013f6514e-0170e6bfcd.zip/node_modules/fastq/",\
@@ -2472,6 +2626,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["call-bind", "npm:1.0.2"],\
             ["get-intrinsic", "npm:1.1.3"],\
             ["is-typed-array", "npm:1.1.10"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["is-arrayish", [\
+        ["npm:0.3.2", {\
+          "packageLocation": "./.yarn/cache/is-arrayish-npm-0.3.2-f856180f79-977e64f54d.zip/node_modules/is-arrayish/",\
+          "packageDependencies": [\
+            ["is-arrayish", "npm:0.3.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -3389,12 +3552,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["partify", "workspace:."],\
+            ["@fortawesome/fontawesome-svg-core", "npm:6.2.1"],\
+            ["@fortawesome/free-brands-svg-icons", "npm:6.2.1"],\
+            ["@fortawesome/free-regular-svg-icons", "npm:6.2.1"],\
+            ["@fortawesome/free-solid-svg-icons", "npm:6.2.1"],\
+            ["@fortawesome/react-fontawesome", "virtual:6969c2251fb77007b31e62993dcca794e76d7169a69f170bd2be146d87a4e55f0be59b4256d2c3596a3014e144e9f27a0832cdad05e10d2e178de42abd435da0#npm:0.2.0"],\
             ["@next/font", "npm:13.1.1"],\
             ["@tailwindcss/typography", "virtual:6969c2251fb77007b31e62993dcca794e76d7169a69f170bd2be146d87a4e55f0be59b4256d2c3596a3014e144e9f27a0832cdad05e10d2e178de42abd435da0#npm:0.5.8"],\
             ["@types/node", "npm:18.11.18"],\
             ["@types/react", "npm:18.0.26"],\
             ["@types/react-dom", "npm:18.0.10"],\
             ["autoprefixer", "virtual:6969c2251fb77007b31e62993dcca794e76d7169a69f170bd2be146d87a4e55f0be59b4256d2c3596a3014e144e9f27a0832cdad05e10d2e178de42abd435da0#npm:10.4.13"],\
+            ["daisyui", "virtual:6969c2251fb77007b31e62993dcca794e76d7169a69f170bd2be146d87a4e55f0be59b4256d2c3596a3014e144e9f27a0832cdad05e10d2e178de42abd435da0#npm:2.46.1"],\
             ["eslint", "npm:8.31.0"],\
             ["eslint-config-next", "virtual:6969c2251fb77007b31e62993dcca794e76d7169a69f170bd2be146d87a4e55f0be59b4256d2c3596a3014e144e9f27a0832cdad05e10d2e178de42abd435da0#npm:13.1.1"],\
             ["next", "virtual:6969c2251fb77007b31e62993dcca794e76d7169a69f170bd2be146d87a4e55f0be59b4256d2c3596a3014e144e9f27a0832cdad05e10d2e178de42abd435da0#npm:13.1.1"],\
@@ -3534,10 +3703,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:ecf2e8e6f44730b7388bdbc51a2e0ef690a4b6c1ae2e38362c07e97b616257444ad5d88282fa8b1c66ac0202671cee09929d89313eb8aca4849535c8a5c6d0d7#npm:4.0.0", {\
-          "packageLocation": "./.yarn/__virtual__/postcss-js-virtual-197a3cd892/0/cache/postcss-js-npm-4.0.0-b053712bf0-14be8a5867.zip/node_modules/postcss-js/",\
+        ["virtual:7ba518cec25df70b139cadd65896481443de61d996d5f48392cc05f8de2f2a11c2579e1626e1ad94b0bb849cb5a649a1928e6d69096c07782a5b186c58f439c3#npm:4.0.0", {\
+          "packageLocation": "./.yarn/__virtual__/postcss-js-virtual-7f33d8c95c/0/cache/postcss-js-npm-4.0.0-b053712bf0-14be8a5867.zip/node_modules/postcss-js/",\
           "packageDependencies": [\
-            ["postcss-js", "virtual:ecf2e8e6f44730b7388bdbc51a2e0ef690a4b6c1ae2e38362c07e97b616257444ad5d88282fa8b1c66ac0202671cee09929d89313eb8aca4849535c8a5c6d0d7#npm:4.0.0"],\
+            ["postcss-js", "virtual:7ba518cec25df70b139cadd65896481443de61d996d5f48392cc05f8de2f2a11c2579e1626e1ad94b0bb849cb5a649a1928e6d69096c07782a5b186c58f439c3#npm:4.0.0"],\
             ["@types/postcss", null],\
             ["camelcase-css", "npm:2.0.1"],\
             ["postcss", "npm:8.4.20"]\
@@ -3990,6 +4159,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["simple-swizzle", [\
+        ["npm:0.2.2", {\
+          "packageLocation": "./.yarn/cache/simple-swizzle-npm-0.2.2-8dee37fad1-a7f3f2ab5c.zip/node_modules/simple-swizzle/",\
+          "packageDependencies": [\
+            ["simple-swizzle", "npm:0.2.2"],\
+            ["is-arrayish", "npm:0.3.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["slash", [\
         ["npm:3.0.0", {\
           "packageLocation": "./.yarn/cache/slash-npm-3.0.0-b87de2279a-94a93fff61.zip/node_modules/slash/",\
@@ -4238,7 +4417,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["picocolors", "npm:1.0.0"],\
             ["postcss", "npm:8.4.20"],\
             ["postcss-import", "virtual:ecf2e8e6f44730b7388bdbc51a2e0ef690a4b6c1ae2e38362c07e97b616257444ad5d88282fa8b1c66ac0202671cee09929d89313eb8aca4849535c8a5c6d0d7#npm:14.1.0"],\
-            ["postcss-js", "virtual:ecf2e8e6f44730b7388bdbc51a2e0ef690a4b6c1ae2e38362c07e97b616257444ad5d88282fa8b1c66ac0202671cee09929d89313eb8aca4849535c8a5c6d0d7#npm:4.0.0"],\
+            ["postcss-js", "virtual:7ba518cec25df70b139cadd65896481443de61d996d5f48392cc05f8de2f2a11c2579e1626e1ad94b0bb849cb5a649a1928e6d69096c07782a5b186c58f439c3#npm:4.0.0"],\
             ["postcss-load-config", "virtual:ecf2e8e6f44730b7388bdbc51a2e0ef690a4b6c1ae2e38362c07e97b616257444ad5d88282fa8b1c66ac0202671cee09929d89313eb8aca4849535c8a5c6d0d7#npm:3.1.4"],\
             ["postcss-nested", "virtual:ecf2e8e6f44730b7388bdbc51a2e0ef690a4b6c1ae2e38362c07e97b616257444ad5d88282fa8b1c66ac0202671cee09929d89313eb8aca4849535c8a5c6d0d7#npm:6.0.0"],\
             ["postcss-selector-parser", "npm:6.0.11"],\
