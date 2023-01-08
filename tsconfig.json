@@ -21,10 +21,12 @@
   },
   "include": [
     "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
+    "components/**/*.*",
+    "pages/**/*.*"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    ".yarn",
+    "next"
   ]
 }

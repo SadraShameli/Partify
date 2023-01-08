@@ -33,7 +33,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@fortawesome/free-regular-svg-icons", "npm:6.2.1"],\
             ["@fortawesome/free-solid-svg-icons", "npm:6.2.1"],\
             ["@fortawesome/react-fontawesome", "virtual:6969c2251fb77007b31e62993dcca794e76d7169a69f170bd2be146d87a4e55f0be59b4256d2c3596a3014e144e9f27a0832cdad05e10d2e178de42abd435da0#npm:0.2.0"],\
-            ["@next/font", "npm:13.1.1"],\
             ["@tailwindcss/typography", "virtual:6969c2251fb77007b31e62993dcca794e76d7169a69f170bd2be146d87a4e55f0be59b4256d2c3596a3014e144e9f27a0832cdad05e10d2e178de42abd435da0#npm:0.5.8"],\
             ["@types/node", "npm:18.11.18"],\
             ["@types/react", "npm:18.0.26"],\
@@ -43,7 +42,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:8.31.0"],\
             ["eslint-config-next", "virtual:6969c2251fb77007b31e62993dcca794e76d7169a69f170bd2be146d87a4e55f0be59b4256d2c3596a3014e144e9f27a0832cdad05e10d2e178de42abd435da0#npm:13.1.1"],\
             ["next", "virtual:6969c2251fb77007b31e62993dcca794e76d7169a69f170bd2be146d87a4e55f0be59b4256d2c3596a3014e144e9f27a0832cdad05e10d2e178de42abd435da0#npm:13.1.1"],\
-            ["postcss", "npm:8.4.20"],\
+            ["postcss", "npm:8.4.21"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:6969c2251fb77007b31e62993dcca794e76d7169a69f170bd2be146d87a4e55f0be59b4256d2c3596a3014e144e9f27a0832cdad05e10d2e178de42abd435da0#npm:18.2.0"],\
             ["tailwindcss", "virtual:6969c2251fb77007b31e62993dcca794e76d7169a69f170bd2be146d87a4e55f0be59b4256d2c3596a3014e144e9f27a0832cdad05e10d2e178de42abd435da0#npm:3.2.4"],\
@@ -221,15 +220,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@next/eslint-plugin-next", "npm:13.1.1"],\
             ["glob", "npm:7.1.7"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["@next/font", [\
-        ["npm:13.1.1", {\
-          "packageLocation": "./.yarn/cache/@next-font-npm-13.1.1-9e6d49da60-468a77d3a6.zip/node_modules/@next/font/",\
-          "packageDependencies": [\
-            ["@next/font", "npm:13.1.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -904,7 +894,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["fraction.js", "npm:4.2.0"],\
             ["normalize-range", "npm:0.1.2"],\
             ["picocolors", "npm:1.0.0"],\
-            ["postcss", "npm:8.4.20"],\
+            ["postcss", "npm:8.4.21"],\
             ["postcss-value-parser", "npm:4.2.0"]\
           ],\
           "packagePeers": [\
@@ -1256,7 +1246,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["autoprefixer", "virtual:6969c2251fb77007b31e62993dcca794e76d7169a69f170bd2be146d87a4e55f0be59b4256d2c3596a3014e144e9f27a0832cdad05e10d2e178de42abd435da0#npm:10.4.13"],\
             ["color", "npm:4.2.3"],\
             ["css-selector-tokenizer", "npm:0.8.0"],\
-            ["postcss", "npm:8.4.20"],\
+            ["postcss", "npm:8.4.21"],\
             ["postcss-js", "virtual:7ba518cec25df70b139cadd65896481443de61d996d5f48392cc05f8de2f2a11c2579e1626e1ad94b0bb849cb5a649a1928e6d69096c07782a5b186c58f439c3#npm:4.0.0"],\
             ["tailwindcss", "virtual:6969c2251fb77007b31e62993dcca794e76d7169a69f170bd2be146d87a4e55f0be59b4256d2c3596a3014e144e9f27a0832cdad05e10d2e178de42abd435da0#npm:3.2.4"]\
           ],\
@@ -3557,7 +3547,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@fortawesome/free-regular-svg-icons", "npm:6.2.1"],\
             ["@fortawesome/free-solid-svg-icons", "npm:6.2.1"],\
             ["@fortawesome/react-fontawesome", "virtual:6969c2251fb77007b31e62993dcca794e76d7169a69f170bd2be146d87a4e55f0be59b4256d2c3596a3014e144e9f27a0832cdad05e10d2e178de42abd435da0#npm:0.2.0"],\
-            ["@next/font", "npm:13.1.1"],\
             ["@tailwindcss/typography", "virtual:6969c2251fb77007b31e62993dcca794e76d7169a69f170bd2be146d87a4e55f0be59b4256d2c3596a3014e144e9f27a0832cdad05e10d2e178de42abd435da0#npm:0.5.8"],\
             ["@types/node", "npm:18.11.18"],\
             ["@types/react", "npm:18.0.26"],\
@@ -3567,7 +3556,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:8.31.0"],\
             ["eslint-config-next", "virtual:6969c2251fb77007b31e62993dcca794e76d7169a69f170bd2be146d87a4e55f0be59b4256d2c3596a3014e144e9f27a0832cdad05e10d2e178de42abd435da0#npm:13.1.1"],\
             ["next", "virtual:6969c2251fb77007b31e62993dcca794e76d7169a69f170bd2be146d87a4e55f0be59b4256d2c3596a3014e144e9f27a0832cdad05e10d2e178de42abd435da0#npm:13.1.1"],\
-            ["postcss", "npm:8.4.20"],\
+            ["postcss", "npm:8.4.21"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:6969c2251fb77007b31e62993dcca794e76d7169a69f170bd2be146d87a4e55f0be59b4256d2c3596a3014e144e9f27a0832cdad05e10d2e178de42abd435da0#npm:18.2.0"],\
             ["tailwindcss", "virtual:6969c2251fb77007b31e62993dcca794e76d7169a69f170bd2be146d87a4e55f0be59b4256d2c3596a3014e144e9f27a0832cdad05e10d2e178de42abd435da0#npm:3.2.4"],\
@@ -3659,10 +3648,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["npm:8.4.20", {\
-          "packageLocation": "./.yarn/cache/postcss-npm-8.4.20-b87cd5ecc8-1a5609ea1c.zip/node_modules/postcss/",\
+        ["npm:8.4.21", {\
+          "packageLocation": "./.yarn/cache/postcss-npm-8.4.21-9ad76bf58d-e39ac60ccd.zip/node_modules/postcss/",\
           "packageDependencies": [\
-            ["postcss", "npm:8.4.20"],\
+            ["postcss", "npm:8.4.21"],\
             ["nanoid", "npm:3.3.4"],\
             ["picocolors", "npm:1.0.0"],\
             ["source-map-js", "npm:1.0.2"]\
@@ -3683,7 +3672,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["postcss-import", "virtual:ecf2e8e6f44730b7388bdbc51a2e0ef690a4b6c1ae2e38362c07e97b616257444ad5d88282fa8b1c66ac0202671cee09929d89313eb8aca4849535c8a5c6d0d7#npm:14.1.0"],\
             ["@types/postcss", null],\
-            ["postcss", "npm:8.4.20"],\
+            ["postcss", "npm:8.4.21"],\
             ["postcss-value-parser", "npm:4.2.0"],\
             ["read-cache", "npm:1.0.0"],\
             ["resolve", "patch:resolve@npm%3A1.22.1#~builtin<compat/resolve>::version=1.22.1&hash=c3c19d"]\
@@ -3709,7 +3698,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["postcss-js", "virtual:7ba518cec25df70b139cadd65896481443de61d996d5f48392cc05f8de2f2a11c2579e1626e1ad94b0bb849cb5a649a1928e6d69096c07782a5b186c58f439c3#npm:4.0.0"],\
             ["@types/postcss", null],\
             ["camelcase-css", "npm:2.0.1"],\
-            ["postcss", "npm:8.4.20"]\
+            ["postcss", "npm:8.4.21"]\
           ],\
           "packagePeers": [\
             "@types/postcss",\
@@ -3733,7 +3722,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/postcss", null],\
             ["@types/ts-node", null],\
             ["lilconfig", "npm:2.0.6"],\
-            ["postcss", "npm:8.4.20"],\
+            ["postcss", "npm:8.4.21"],\
             ["ts-node", null],\
             ["yaml", "npm:1.10.2"]\
           ],\
@@ -3759,7 +3748,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["postcss-nested", "virtual:ecf2e8e6f44730b7388bdbc51a2e0ef690a4b6c1ae2e38362c07e97b616257444ad5d88282fa8b1c66ac0202671cee09929d89313eb8aca4849535c8a5c6d0d7#npm:6.0.0"],\
             ["@types/postcss", null],\
-            ["postcss", "npm:8.4.20"],\
+            ["postcss", "npm:8.4.21"],\
             ["postcss-selector-parser", "npm:6.0.11"]\
           ],\
           "packagePeers": [\
@@ -4415,7 +4404,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["normalize-path", "npm:3.0.0"],\
             ["object-hash", "npm:3.0.0"],\
             ["picocolors", "npm:1.0.0"],\
-            ["postcss", "npm:8.4.20"],\
+            ["postcss", "npm:8.4.21"],\
             ["postcss-import", "virtual:ecf2e8e6f44730b7388bdbc51a2e0ef690a4b6c1ae2e38362c07e97b616257444ad5d88282fa8b1c66ac0202671cee09929d89313eb8aca4849535c8a5c6d0d7#npm:14.1.0"],\
             ["postcss-js", "virtual:7ba518cec25df70b139cadd65896481443de61d996d5f48392cc05f8de2f2a11c2579e1626e1ad94b0bb849cb5a649a1928e6d69096c07782a5b186c58f439c3#npm:4.0.0"],\
             ["postcss-load-config", "virtual:ecf2e8e6f44730b7388bdbc51a2e0ef690a4b6c1ae2e38362c07e97b616257444ad5d88282fa8b1c66ac0202671cee09929d89313eb8aca4849535c8a5c6d0d7#npm:3.1.4"],\

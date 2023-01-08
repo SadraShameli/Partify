@@ -9,5 +9,8 @@ module.exports = {
         destination: 'http://localhost:80/:path*'
       }
     ]
-  }
+  },
+  images: {
+    domains: ['cdn.shopify.com'],
+  },
 }
