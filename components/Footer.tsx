@@ -1,22 +1,22 @@
-import { faIdeal, faCcAmex, faCcApplePay, faCcPaypal, faCcMastercard, faCcVisa, faInstagram, faFacebook, faWhatsapp, faTelegram } from '@fortawesome/free-brands-svg-icons'
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faIdeal, faCcAmex, faCcApplePay, faCcPaypal, faCcMastercard, faCcVisa, faInstagram, faFacebook, faWhatsapp, faTelegram } from '@fortawesome/free-brands-svg-icons';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // company ...  className='text-slate-900 dark:text-slate-100 font-semibold'
 
 interface INav {
-    Title: string,
+    Title: string;
     Items: {
-        Title: string,
-        Url: string
-    }[]
+        Title: string;
+        Url: string;
+    }[];
 }
 
 interface ILinkIcon {
-    Title?: string,
-    Url?: string,
-    Icon: any
-};
+    Title?: string;
+    Url?: string;
+    Icon: any;
+}
 
 const Nav: INav[] = [
     {
@@ -28,13 +28,13 @@ const Nav: INav[] = [
             },
             {
                 Title: 'Contact',
-                Url: ''
+                Url: '',
             },
             {
                 Title: 'Location',
-                Url: ''
-            }
-        ]
+                Url: '',
+            },
+        ],
     },
     {
         Title: 'Legal',
@@ -45,58 +45,58 @@ const Nav: INav[] = [
             },
             {
                 Title: 'Privacy policy',
-                Url: ''
+                Url: '',
             },
             {
                 Title: 'Cookie policy',
-                Url: ''
-            }
-        ]
-    }
+                Url: '',
+            },
+        ],
+    },
 ];
 
 const Payments: ILinkIcon[] = [
     {
-        Icon: faIdeal
+        Icon: faIdeal,
     },
     {
-        Icon: faCcApplePay
+        Icon: faCcApplePay,
     },
     {
-        Icon: faCcPaypal
+        Icon: faCcPaypal,
     },
     {
-        Icon: faCcMastercard
+        Icon: faCcMastercard,
     },
     {
-        Icon: faCcVisa
+        Icon: faCcVisa,
     },
     {
-        Icon: faCcAmex
-    }
+        Icon: faCcAmex,
+    },
 ];
 
 const Socials: ILinkIcon[] = [
     {
         Title: 'Instagram',
         Icon: faInstagram,
-        Url: ''
+        Url: '',
     },
     {
         Title: 'Facebook',
         Icon: faFacebook,
-        Url: ''
+        Url: '',
     },
     {
         Title: 'Whatsapp',
         Icon: faWhatsapp,
-        Url: ''
+        Url: '',
     },
     {
         Title: 'Telegram',
         Icon: faTelegram,
-        Url: ''
-    }
+        Url: '',
+    },
 ];
 
 export default function Footer() {
@@ -112,21 +112,21 @@ export default function Footer() {
                         </div>
                         <div className='flex gap-4'>
                             {Payments.map((payment, index) => {
-                                return (
-                                    <FontAwesomeIcon className='w-8 h-8' icon={payment.Icon} href={payment.Url} key={index} />
-                                );
+                                return <FontAwesomeIcon className='w-8 h-8' icon={payment.Icon} href={payment.Url} key={index} />;
                             })}
                         </div>
                     </div>
                     {Nav.map((nav, index) => {
                         return (
                             <div key={index}>
-                                <h2 className="text-slate-900 dark:text-slate-100 font-semibold">{nav.Title}</h2>
-                                <ul className="mt-3 space-y-2">
+                                <h2 className='text-slate-900 dark:text-slate-100 font-semibold'>{nav.Title}</h2>
+                                <ul className='mt-3 space-y-2'>
                                     {nav.Items.map((item, index) => {
                                         return (
                                             <li key={index}>
-                                                <a className='hover:text-slate-900 dark:hover:text-slate-300' href={item.Url}>{item.Title}</a>
+                                                <a className='hover:text-slate-900 dark:hover:text-slate-300' href={item.Url}>
+                                                    {item.Title}
+                                                </a>
                                             </li>
                                         );
                                     })}
@@ -148,9 +148,9 @@ export default function Footer() {
                                 </div>
                             );
                         })}
-                    </div >
+                    </div>
                 </div>
-            </footer >
+            </footer>
         </>
     );
 }

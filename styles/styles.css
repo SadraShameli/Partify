@@ -4,6 +4,11 @@
 
 @layer components {
     .btn {
+        @apply rounded;
         text-transform: none;
+    }
+
+    .img {
+        @apply rounded object-cover;
     }
 }
