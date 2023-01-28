@@ -1,15 +1,24 @@
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import ProductPage from '../components/Product/ProductPage';
+import NavigationBar from '../components/home/NavigationBar';
+import Footer from '../components/home/Footer/Footer';
 import { IProduct } from '../components/Product/ProductTypes';
+import ProductOverView2 from '../components/Product/ProductOverView2';
+import ProductOverView from '../components/Product/ProductOverView';
 
 const product: IProduct = {
     Id: 0,
     Name: 'Classic Utility Jacket',
     Price: '€110',
-    Image: 'https://cdn.shopify.com/s/files/1/1479/8488/products/PERCIVAL_MENSWEAR_ECOM_UTILITY_KHAKI12.jpg',
-    Details: 'The 6-Pack includes two black, two white, and two heather gray Basic Tees.',
-    Description: 'The Basic Jacket made for daily use.',
+    MainImage: 'https://cdn.shopify.com/s/files/1/1479/8488/products/PERCIVAL_MENSWEAR_ECOM_UTILITY_KHAKI12.jpg',
+    OtherImages: [
+        'https://cdn.shopify.com/s/files/1/1479/8488/products/PERCIVAL_MENSWEAR_ECOM_UTILITY_KHAKI12.jpg',
+        'https://cdn.shopify.com/s/files/1/1479/8488/products/PERCIVAL_MENSWEAR_ECOM_UTILITY_KHAKI12.jpg',
+        'https://cdn.shopify.com/s/files/1/1479/8488/products/PERCIVAL_MENSWEAR_ECOM_UTILITY_KHAKI12.jpg',
+        'https://cdn.shopify.com/s/files/1/1479/8488/products/PERCIVAL_MENSWEAR_ECOM_UTILITY_KHAKI12.jpg',
+    ],
+    Details:
+        'The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming "Charcoal Gray" limited release.',
+    Description:
+        'The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.',
     Categories: ['Men', 'Clothing'],
     Highlights: ['Hand cut and sewn locally', 'Dyed with out proprietary colors', 'Pre-washed & pre-shrunk', 'Ultra-soft 100% cotton'],
     StarCount: 4,
@@ -17,31 +26,38 @@ const product: IProduct = {
     InStock: true,
     Variants: [
         {
-            Title: 'XS',
+            Name: 'XS',
+            Color: 'Black',
             InStock: false,
         },
         {
-            Title: 'S',
+            Name: 'S',
+            Color: 'Black',
             InStock: false,
         },
         {
-            Title: 'M',
+            Name: 'M',
+            Color: 'Black',
             InStock: false,
         },
         {
-            Title: 'L',
+            Name: 'L',
+            Color: 'Black',
             InStock: true,
         },
         {
-            Title: 'XL',
+            Name: 'XL',
+            Color: 'Black',
             InStock: true,
         },
         {
-            Title: '2XL',
+            Name: '2XL',
+            Color: 'Black',
             InStock: true,
         },
         {
-            Title: '3XL',
+            Name: '3XL',
+            Color: 'Black',
             InStock: true,
         },
     ],
@@ -50,9 +66,10 @@ const product: IProduct = {
 export default function Home() {
     return (
         <>
-            <Navbar />
+            <NavigationBar />
             <main className='container'>
-                <ProductPage product={product} productRecommendations={[product, product, product, product]} />
+                <ProductOverView product={product} productRecommendations={[product, product, product, product]} />
+                <ProductOverView2 product={product} productRecommendations={[product, product, product, product]} />
             </main>
             <Footer />
         </>

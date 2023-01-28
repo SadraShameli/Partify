@@ -1,24 +1,23 @@
-import LangChange from './LangChange';
+import LanguageChange from './LanguageChange';
 
-export default function Navbar() {
+export default function NavigationBar() {
     return (
         <nav className='flex items-center p-4 border-b'>
-            <button className='btn btn-square btn-ghost' type='button' title='Navbar'>
+            <button type='button' className='btn btn-ghost' title='Navbar'>
                 <svg className='inline-block w-5 h-5 stroke-current' viewBox='0 0 24 24'>
                     <path className='stroke-2' d='M4 6h16M4 12h16M4 18h16' />
                 </svg>
             </button>
 
             <div className='flex items-center gap-10'>
-                <a className='font-bold text-xl normal-case'>Partify</a>
-
+                <a className='text-xl font-bold normal-case'>Partify</a>
                 <p>Men</p>
                 <p>Children</p>
                 <p>Women</p>
             </div>
 
             <div className='lg:flex relative hidden ml-auto'>
-                <LangChange />
+                <LanguageChange />
 
                 <div className='dropdown dropdown-end' title='Account'>
                     <div tabIndex={0} className='btn btn-ghost gap-1 normal-case'>

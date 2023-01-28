@@ -4,11 +4,11 @@ import { IProduct } from './ProductTypes';
 export default function ProductCard(product: IProduct) {
     return (
         <div className='grid w-full'>
-            <div className='relative h-96'>
-                <Image src={product.Image} alt={product.Name} className='img' fill />
+            <div className='h-96 relative'>
+                <Image src={product.MainImage} alt={product.Name} className='img' fill />
             </div>
 
-            <div className='mt-5 flex justify-between items-center'>
+            <div className='flex justify-between mt-3'>
                 <div>
                     <h3 className='text-sm text-gray-700'>{product.Name}</h3>
                     <p className='mt-1 text-sm text-gray-500'>Black</p>
