@@ -105,6 +105,7 @@ export const PaymentIcons: INavigationLink[] = [
         Icon: '/static/icons/ApplePay.svg',
         Url: '',
     },
+    /*
     {
         Name: 'Visa',
         Icon: '/static/icons/Visa.svg',
@@ -115,7 +116,6 @@ export const PaymentIcons: INavigationLink[] = [
         Icon: '/static/icons/Amex.svg',
         Url: '',
     },
-    /*
     {
         Name: 'Discover',
         Icon: '/static/icons/Discover.svg',

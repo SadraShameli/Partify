@@ -3,7 +3,7 @@ import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export function AccordionHeader({ children }: { children: React.ReactNode }) {
-    return <div className='accordion'>{children}</div>;
+    return <div className='last:border-b'>{children}</div>;
 }
 
 export function AccordionContent({ children, title }: { children: React.ReactNode; title: string }) {

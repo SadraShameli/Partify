@@ -9,7 +9,11 @@ export const InputField = forwardRef<HTMLInputElement, React.PropsWithChildren<I
         <div className='flex flex-col gap-2'>
             <span className='font-semibold'>{rest.title}</span>
 
-            <input className='hover:border-primary outline-primary w-full p-2 border-2 rounded shadow-sm' {...rest} ref={ref} />
+            <input
+                className='hover:border-primary outline-primary dark:bg-transparent w-full p-2 border rounded shadow-sm focus:outline-none'
+                {...rest}
+                ref={ref}
+            />
 
             {children}
         </div>
@@ -24,6 +28,7 @@ export function InputInfoText({ children }: { children: React.ReactNode }) {
                 <path d='M12 8V13' />
                 <path d='M12 16H12' />
             </svg>
+
             <p className='pl-1'>{children}</p>
         </div>
     );

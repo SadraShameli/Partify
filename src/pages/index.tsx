@@ -1,4 +1,6 @@
 import dynamic from 'next/dynamic';
+
+import Hero from '../components/Home/Hero';
 import { IProduct } from '../components/Product/ProductTypes';
 // import ProductOverView from '../components/Product/ProductOverView';
 // import ProductOverView2 from '../components/Product/ProductOverView2';
@@ -29,10 +31,10 @@ const product: IProduct = {
                 'https://cdn.shopify.com/s/files/1/1479/8488/products/PERCIVAL_MENSWEAR_ECOM_UTILITY_KHAKI12.jpg',
                 'https://cdn.shopify.com/s/files/1/1479/8488/products/PERCIVAL_MENSWEAR_ECOM_UTILITY_KHAKI12.jpg',
                 'https://cdn.shopify.com/s/files/1/1479/8488/products/PERCIVAL_MENSWEAR_ECOM_UTILITY_KHAKI12.jpg',
-                'https://cdn.shopify.com/s/files/1/1479/8488/products/PERCIVAL_MENSWEAR_ECOM_UTILITY_KHAKI12.jpg',
             ],
             color: 'Black',
             inStock: true,
+            currency: '$',
         },
         {
             id: 0,
@@ -41,6 +43,7 @@ const product: IProduct = {
             images: [],
             color: 'Black',
             inStock: false,
+            currency: '$',
         },
         {
             id: 0,
@@ -49,6 +52,7 @@ const product: IProduct = {
             images: [],
             color: 'Black',
             inStock: true,
+            currency: '$',
         },
         {
             id: 0,
@@ -57,15 +61,19 @@ const product: IProduct = {
             images: [],
             color: 'Black',
             inStock: true,
+            currency: '$',
         },
     ],
 };
 
 export default function Home() {
     return (
-        <main className='container'>
-            <ProductOverView product={product} productRecommendations={[product, product, product, product]} />
-            <ProductOverView2 product={product} productRecommendations={[product, product, product, product]} />
+        <main>
+            <Hero />
+            <div className='container relative'>
+                <ProductOverView product={product} productRecommendations={[product, product, product, product]} />
+                <ProductOverView2 product={product} productRecommendations={[product, product, product, product]} />
+            </div>
         </main>
     );
 }

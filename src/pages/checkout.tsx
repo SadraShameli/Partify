@@ -5,7 +5,7 @@ const CheckoutForm = dynamic(() => import('../components/Checkout/CheckoutForm')
 
 export default function Checkout() {
     return (
-        <main className='container'>
+        <main className='container isolate'>
             <CheckoutForm />
         </main>
     );

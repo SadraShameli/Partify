@@ -4,7 +4,7 @@
 
 @layer base {
     * {
-        @apply transition-all duration-200 ease-out;
+        @apply transition-all duration-200 ease-out dark:border-[#424245a1];
     }
 
     body {
@@ -17,31 +17,17 @@
         @apply text-2xl font-bold mb-[1em];
     }
 
+    img {
+        @apply rounded object-cover;
+    }
+
     path {
         stroke-linecap: round;
     }
 }
 
-@layer utilities {
-    .prose {
-        @apply dark:prose-invert;
-    }
-
-    .text-subtitle {
-        @apply text-slate-500;
-    }
-}
-
 @layer components {
-    .accordion > :last-child {
-        @apply border-b;
-    }
-
     .btn {
         @apply normal-case rounded;
-    }
-
-    .img {
-        @apply rounded object-cover;
     }
 }

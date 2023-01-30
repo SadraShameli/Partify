@@ -3,18 +3,18 @@ import { IProduct } from './ProductTypes';
 
 export default function ProductCard(product: IProduct) {
     return (
-        <div className='grid'>
+        <div>
             <div className='h-96 relative'>
-                <Image src={product.variants[0].images[0]} alt={product.name} className='img' fill />
+                <Image src={product.variants[0].images[0]} alt={product.name} fill />
             </div>
 
-            <div className='flex justify-between gap-5 mt-3'>
+            <div className='flex justify-between gap-5 mt-3 text-sm font-semibold'>
                 <div>
-                    <p className='text-sm font-semibold text-gray-700'>{product.name}</p>
-                    <p className='mt-1 text-sm text-gray-500'>Black</p>
+                    <p>{product.name}</p>
+                    <p className='mt-1 font-light text-base-300'>Black</p>
                 </div>
 
-                <p className='text-sm font-medium text-gray-900'>{`${product.currency}${product.price}`}</p>
+                <p>{`${product.currency}${product.price}`}</p>
             </div>
         </div>
     );

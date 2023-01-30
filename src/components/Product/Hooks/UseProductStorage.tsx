@@ -32,8 +32,11 @@ export default function UseProductStorage(key: string, product?: IProduct) {
                     setProducts(removedProducts);
                 } else {
                     localStorage.removeItem(key);
+                    setProducts([]);
                 }
             }
+        } else {
+            setProducts([]);
         }
     }
 

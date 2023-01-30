@@ -7,6 +7,7 @@ export interface IProductSubVariant {
     color: string;
     images: string[];
     inStock: boolean;
+    currency: CurrencyTypes;
 }
 
 export interface IProductVariant {
@@ -16,6 +17,7 @@ export interface IProductVariant {
     color: string;
     images: string[];
     inStock: boolean;
+    currency: CurrencyTypes;
 }
 
 export interface IProduct {

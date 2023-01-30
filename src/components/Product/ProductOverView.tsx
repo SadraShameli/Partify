@@ -19,7 +19,7 @@ export default function ProductOverView({ product, productRecommendations }: { p
                     <ul>
                         {product.categories.map((value, index) => (
                             <li key={index} className='font-bold'>
-                                {value}
+                                <a>{value}</a>
                             </li>
                         ))}
                     </ul>
