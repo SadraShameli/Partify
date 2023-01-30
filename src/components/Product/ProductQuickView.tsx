@@ -5,23 +5,23 @@ export default function ProductQuickView(props: IProduct) {
     return (
         <div className='flex pt-10'>
             <div className='relative w-48'>
-                <Image className='img' src={props.MainImage} alt={props.Name} loading='lazy' fill />
+                <Image className='img' src={props.variants[0].images[0]} alt={props.name} fill />
             </div>
 
             <form className='flex-auto p-6'>
                 <div className='flex flex-wrap'>
-                    <div className='text-primary flex-auto text-lg font-semibold'>{props.Name}</div>
-                    <p className='text-info font-semibold'>{props.Price}</p>
-                    <p className='w-full text-sm font-medium'>{props.InStock ? 'In' : 'Out of'} stock</p>
+                    <div className='text-primary flex-auto text-lg font-semibold'>{props.name}</div>
+                    <p className='text-info font-semibold'>{props.price}</p>
+                    <p className='w-full text-sm font-medium'>{props.inStock ? 'In' : 'Out of'} stock</p>
                 </div>
 
                 <div className='pb-6 mt-4 mb-6'>
                     <div className='space-x-2'>
-                        {props.Variants.map((variant, index) => {
+                        {props.variants.map((variant, index) => {
                             return (
                                 <label key={index}>
-                                    <input className='peer sr-only' name='size' type='radio' value={variant.Name} {...(variant.InStock && { checked: true })} />
-                                    <div className={`btn peer-checked:btn-active ${variant.InStock || 'btn-disabled'}`}>{variant.Name}</div>
+                                    <input className='peer sr-only' name='size' type='radio' value={variant.name} {...(variant.inStock && { checked: true })} />
+                                    <div className={`btn peer-checked:btn-active ${variant.inStock || 'btn-disabled'}`}>{variant.name}</div>
                                 </label>
                             );
                         })}

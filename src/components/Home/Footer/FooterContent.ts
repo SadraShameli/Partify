@@ -23,6 +23,46 @@ export const NavigationList: INavigationList[] = [
         ],
     },
     {
+        Name: 'Company',
+        Items: [
+            {
+                Name: 'About us',
+                Icon: '',
+                Url: '',
+            },
+            {
+                Name: 'Contact',
+                Icon: '',
+                Url: '',
+            },
+            {
+                Name: 'Location',
+                Icon: '',
+                Url: '',
+            },
+        ],
+    },
+    {
+        Name: 'Legal',
+        Items: [
+            {
+                Name: 'Terms and Conditions',
+                Icon: '',
+                Url: '',
+            },
+            {
+                Name: 'Privacy policy',
+                Icon: '',
+                Url: '',
+            },
+            {
+                Name: 'Cookie policy',
+                Icon: '',
+                Url: '',
+            },
+        ],
+    },
+    {
         Name: 'Legal',
         Items: [
             {

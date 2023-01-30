@@ -1,9 +1,12 @@
-import { useEffect } from 'react';
 import NextHead from 'next/head';
 import type { AppProps } from 'next/app';
+import { useEffect } from 'react';
+
+import NavigationBar from '../components/Home/NavigationBar';
+import Footer from '../components/Home/Footer/Footer';
 
 import '../styles/fonts.css';
-import '../styles/styles.css';
+import '../styles/globals.css';
 
 let reloadInterval: NodeJS.Timer;
 
@@ -62,9 +65,11 @@ export default function App({ Component, pageProps }: AppProps) {
                 <title>Partify</title>
                 <meta name='description' content='Partify' />
                 <meta name='viewport' content='width=device-width, initial-scale=1' />
-                <link rel='icon' href='/favicon.ico' />
+                <link rel='shortcut icon' href='/favicon.ico' />
             </NextHead>
+            <NavigationBar />
             <Component {...pageProps} />
+            <Footer />
         </>
     );
 }

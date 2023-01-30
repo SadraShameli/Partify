@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    * {
+        @apply transition-all duration-200 ease-out;
+    }
+
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+    }
+
+    h2 {
+        @apply text-2xl font-bold mb-[1em];
+    }
+
+    path {
+        stroke-linecap: round;
+    }
+}
+
+@layer utilities {
+    .prose {
+        @apply dark:prose-invert;
+    }
+
+    .text-subtitle {
+        @apply text-slate-500;
+    }
+}
+
+@layer components {
+    .accordion > :last-child {
+        @apply border-b;
+    }
+
+    .btn {
+        @apply normal-case rounded;
+    }
+
+    .img {
+        @apply rounded object-cover;
+    }
+}
