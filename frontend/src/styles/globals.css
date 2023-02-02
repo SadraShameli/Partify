@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        @apply dark:[color-scheme:dark];
+    }
+
+    * {
+        @apply transition-all duration-150 ease-out scroll-smooth dark:border-[#424245a1] accent-primary;
+    }
+
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+    }
+
+    h2 {
+        @apply text-2xl font-bold mb-[1em];
+    }
+
+    h2 > svg {
+        @apply w-8 h-8;
+    }
+
+    a {
+        @apply hover:text-primary hover:cursor-pointer hover:underline;
+    }
+
+    img {
+        @apply rounded object-cover;
+    }
+
+    path {
+        stroke-linejoin: round;
+        stroke-linecap: round;
+    }
+}
+
+@layer components {
+    .accordion {
+        @apply py-4 border-t;
+    }
+
+    .accordion summary {
+        @apply flex justify-between items-center font-semibold cursor-pointer select-none;
+    }
+
+    .accordion div {
+        @apply prose pt-4 opacity-0;
+    }
+
+    .accordion[open] div {
+        @apply opacity-100;
+    }
+
+    .accordion[open] svg {
+        @apply rotate-180;
+    }
+
+    .btn {
+        @apply normal-case rounded;
+    }
+
+    .btn > svg {
+        @apply w-6 h-6;
+    }
+}
