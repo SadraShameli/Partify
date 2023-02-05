@@ -1,9 +1,9 @@
-import UserLogin from '../components/User/UserLogin';
+import UserSignIn from '../components/User/UserSignIn';
 
-export default function Signin() {
+export default function SignIn() {
     return (
         <main className='container'>
-            <UserLogin />
+            <UserSignIn />
         </main>
     );
 }

@@ -1,11 +1,12 @@
 import { type GetServerSidePropsContext } from 'next';
-import AppleProvdier from 'next-auth/providers/apple';
+import AppleProvider from 'next-auth/providers/apple';
 import GoogleProvider from 'next-auth/providers/google';
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
 import { getServerSession, type NextAuthOptions, type DefaultSession } from 'next-auth';
 
-import { prisma } from './db';
 import { env } from '../env/server.mjs';
+import Routes from '../utils/routes';
+import { prisma } from './db';
 
 declare module 'next-auth' {
     interface Session extends DefaultSession {
@@ -27,10 +28,10 @@ export const authOptions: NextAuthOptions = {
     adapter: PrismaAdapter(prisma),
     providers: [
         GoogleProvider({
-            clientId: env.GOOGLE_ID,
-            clientSecret: env.GOOGLE_SECRET,
+            clientId: env.GOOGLE_CLIENT_ID,
+            clientSecret: env.GOOGLE_CLIENT_SECRET,
         }),
-        AppleProvdier({
+        AppleProvider({
             clientId: env.APPLE_ID,
             clientSecret: env.APPLE_SECRET,
         }),

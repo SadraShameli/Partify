@@ -1,10 +1,10 @@
 import { clientEnv, clientSchema } from './schema.mjs';
-import formatZodErrors from '../utils/formatZodErrors.mjs';
+import formatErrors from '../utils/zod/formatErrors.mjs';
 
 const _clientEnv = clientSchema.safeParse(clientEnv);
 
 if (!_clientEnv.success) {
-    formatZodErrors(_clientEnv.error).forEach((e) => {
+    formatErrors(_clientEnv.error).forEach((e) => {
         console.error(e);
     });
 

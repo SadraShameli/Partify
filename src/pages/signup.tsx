@@ -1,9 +1,9 @@
-import UserRegistrations from '../components/User/UserRegistration';
+import UserSignUp from '../components/User/UserSignUp';
 
-export default function Signup() {
+export default function SignUp() {
     return (
         <main className='container'>
-            <UserRegistrations />
+            <UserSignUp />
         </main>
     );
 }

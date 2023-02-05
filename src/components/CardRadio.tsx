@@ -1,22 +1,21 @@
-import { createContext, useContext, useId, type InputHTMLAttributes } from 'react';
+import { forwardRef, type InputHTMLAttributes } from 'react';
 
-interface ICardRadio extends InputHTMLAttributes<HTMLInputElement> {
+export interface ICardRadioProps extends InputHTMLAttributes<HTMLInputElement> {
     children?: React.ReactNode;
 }
 
-const CardContext = createContext('');
-
-export default function CardRadio({ children, ...rest }: ICardRadio) {
-    const name = useContext(CardContext);
-    const id = useId();
-
+export const CardRadio = forwardRef<HTMLInputElement, React.PropsWithChildren<ICardRadioProps>>(({ children, ...rest }, ref) => {
     return (
-        <label className='flex justify-between rounded border p-5 shadow-sm hover:border-primary' htmlFor={id}>
+        <label className='flex justify-between gap-5 rounded border p-5 shadow-sm hover:border-primary'>
             <div>
                 <p className='font-semibold'>{rest.value}</p>
+
                 {children}
             </div>
-            <input className='self-start' type='radio' name={name} id={id} {...rest} />
+
+            <input type='radio' ref={ref} {...rest} />
         </label>
     );
-}
+});
+
+CardRadio.displayName = 'CardRadio';

@@ -3,68 +3,76 @@
 @tailwind utilities;
 
 @layer base {
-   :root {
-      @apply dark:[color-scheme:dark];
-   }
+    :root {
+        @apply dark:[color-scheme:dark];
+    }
 
-   * {
-      @apply scroll-smooth accent-primary transition-all duration-150 ease-out dark:border-[#424245a1];
-   }
+    * {
+        @apply scroll-smooth accent-primary transition-all duration-150 ease-out dark:border-[#424245a1];
+    }
 
-   body {
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-rendering: optimizeLegibility;
-   }
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+    }
 
-   h2 {
-      @apply mb-[1em] text-2xl font-bold;
-   }
+    h2 {
+        @apply mb-[1em] text-2xl font-bold;
+    }
 
-   h2 > svg {
-      @apply h-8 w-8;
-   }
+    h2 > svg {
+        @apply h-8 w-8;
+    }
 
-   a {
-      @apply hover:cursor-pointer hover:text-primary hover:underline;
-   }
+    a {
+        @apply hover:cursor-pointer hover:text-primary hover:underline;
+    }
 
-   img {
-      @apply rounded object-cover;
-   }
+    img {
+        @apply rounded object-cover;
+    }
 
-   path {
-      stroke-linejoin: round;
-      stroke-linecap: round;
-   }
+    path {
+        stroke-linejoin: round;
+        stroke-linecap: round;
+    }
 }
 
 @layer components {
-   .accordion {
-      @apply border-t py-4;
-   }
+    .accordion {
+        @apply border-t py-4;
+    }
 
-   .accordion summary {
-      @apply flex cursor-pointer select-none items-center justify-between font-semibold;
-   }
+    .accordion summary {
+        @apply flex cursor-pointer select-none items-center justify-between font-semibold;
+    }
 
-   .accordion div {
-      @apply prose pt-4 opacity-0;
-   }
+    .accordion div {
+        @apply prose pt-4 opacity-0;
+    }
 
-   .accordion[open] div {
-      @apply opacity-100;
-   }
+    .accordion[open] div {
+        @apply opacity-100;
+    }
 
-   .accordion[open] svg {
-      @apply rotate-180;
-   }
+    .accordion[open] svg {
+        @apply rotate-180;
+    }
 
-   .btn {
-      @apply rounded normal-case;
-   }
+    .btn {
+        @apply rounded normal-case;
+    }
 
-   .btn > svg {
-      @apply h-6 w-6;
-   }
+    .btn > svg {
+        @apply h-6 w-6;
+    }
+
+    input[type='checkbox'] {
+        @apply checkbox-primary checkbox;
+    }
+
+    input[type='radio'] {
+        @apply radio-primary radio radio-sm;
+    }
 }

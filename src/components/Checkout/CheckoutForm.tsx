@@ -1,21 +1,17 @@
-/* eslint-disable @typescript-eslint/no-misused-promises */
-
+import NoSSR from 'react-no-ssr';
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm, SubmitHandler } from 'react-hook-form';
 
 import CheckoutItem from './CheckoutItem';
-import { CountryInput, PhoneInput } from './CheckoutInputs';
 import { DeliveryMethods } from './CheckoutTypes';
-import type { ContactInformation, DeliveryMethod, ShippingInformation } from './CheckoutTypes';
+import { CheckoutSchema, type Checkout, type DeliveryMethod } from './CheckoutTypes';
 
-import CardRadio from '../CardRadio';
-import { InputField, InputInfoText } from '../InputField';
-import UseProductStorage from '../Product/Hooks/UseProductStorage';
-import { ProductStorageKeys, ValidationPatterns } from '../../assets/Constants';
+import { CardRadio } from '../CardRadio';
 import { GeoProps } from '../../hooks/useGeo';
-import NoSSR from 'react-no-ssr';
-
-interface ICheckoutForm extends ContactInformation, ShippingInformation {}
+import { InputField, InputInfoText } from '../InputField';
+import { ProductStorageKeys } from '../../assets/Constants';
+import UseProductStorage from '../Product/Hooks/UseProductStorage';
 
 export default function CheckoutForm() {
     const [, , removeProduct, products] = UseProductStorage(ProductStorageKeys.addedToBag);
@@ -27,11 +23,11 @@ export default function CheckoutForm() {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm<ICheckoutForm>({ reValidateMode: 'onChange' });
+    } = useForm<Checkout>({ resolver: zodResolver(CheckoutSchema) });
 
-    function onSubmit(data: ICheckoutForm) {
+    const onSubmit: SubmitHandler<Checkout> = async (data) => {
         console.log(data);
-    }
+    };
 
     return (
         <form className='mt-hero flex grid-cols-2 flex-col-reverse gap-20 md:grid' onSubmit={handleSubmit(onSubmit)}>
@@ -46,33 +42,24 @@ export default function CheckoutForm() {
 
                     <div className='grid gap-5'>
                         <div className='grid grid-cols-2 gap-5'>
-                            <InputField title='First name' {...register('firstName', { required: true, pattern: ValidationPatterns.charSpace })}>
-                                {errors.firstName?.type === 'required' && <InputInfoText>This field is required</InputInfoText>}
-                                {errors.firstName?.type === 'pattern' && <InputInfoText>Characters and spaces only</InputInfoText>}
+                            <InputField title='First name' {...register('firstName')}>
+                                {errors.firstName && <InputInfoText>{errors.firstName?.message}</InputInfoText>}
                             </InputField>
 
-                            <InputField title='Last name' {...register('lastName', { required: true, pattern: ValidationPatterns.charSpace })}>
-                                {errors.lastName?.type === 'required' && <InputInfoText>This field is required</InputInfoText>}
-                                {errors.lastName?.type === 'pattern' && <InputInfoText>Characters and spaces only</InputInfoText>}
+                            <InputField title='Last name' {...register('lastName')}>
+                                {errors.lastName && <InputInfoText>{errors.lastName?.message}</InputInfoText>}
                             </InputField>
                         </div>
 
-                        <InputField
-                            type='email'
-                            title='Email address'
-                            placeholder='you@domain.com'
-                            {...register('email', { required: true, pattern: ValidationPatterns.email })}
-                        >
-                            {errors.email?.type === 'required' && <InputInfoText>This field is required</InputInfoText>}
+                        <InputField placeholder='you@domain.com' title='Email address' type='email' {...register('email')}>
+                            {errors.email && <InputInfoText>{errors.email?.message}</InputInfoText>}
                         </InputField>
 
-                        <PhoneInput {...register('phone', { required: true, pattern: ValidationPatterns.phone, minLength: 10 })}>
-                            {errors.phone?.type === 'required' && <InputInfoText>This field is required</InputInfoText>}
-                            {errors.phone?.type === 'minLength' && <InputInfoText>At least 10 digits</InputInfoText>}
-                            {errors.phone?.type === 'pattern' && <InputInfoText>Numbers only</InputInfoText>}
-                        </PhoneInput>
+                        <InputField title='Phone number' type='tel' {...register('phone')}>
+                            {errors.phone && <InputInfoText>{errors.phone?.message}</InputInfoText>}
+                        </InputField>
 
-                        <InputField title='Order notes' {...register('notes', { required: false })} />
+                        <InputField title='Order notes' {...register('notes')} />
                     </div>
                 </div>
 
@@ -88,26 +75,23 @@ export default function CheckoutForm() {
                     </h2>
 
                     <div className='form-control gap-5'>
-                        <InputField title='Address, suite, etc.' {...register('address', { required: true })}>
-                            {errors.address?.type === 'required' && <InputInfoText>This field is required</InputInfoText>}
+                        <InputField title='Address, suite, etc.' {...register('address')}>
+                            {errors.address && <InputInfoText>{errors.address?.message}</InputInfoText>}
                         </InputField>
 
                         <div className='grid grid-cols-2 gap-5'>
-                            <InputField title='Postal code' {...register('postcode', { required: true, pattern: ValidationPatterns.charNumSpace })}>
-                                {errors.postcode?.type === 'required' && <InputInfoText>This field is required</InputInfoText>}
-                                {errors.postcode?.type === 'pattern' && <InputInfoText>Characters and numbers only</InputInfoText>}
+                            <InputField title='Postal code' {...register('postcode')}>
+                                {errors.postcode && <InputInfoText>{errors.postcode?.message}</InputInfoText>}
                             </InputField>
 
-                            <InputField title='City' {...register('city', { required: true, pattern: ValidationPatterns.charSpace })}>
-                                {errors.city?.type === 'required' && <InputInfoText>This field is required</InputInfoText>}
-                                {errors.city?.type === 'pattern' && <InputInfoText>Characters only</InputInfoText>}
+                            <InputField title='City' {...register('city')}>
+                                {errors.city && <InputInfoText>{errors.city?.message}</InputInfoText>}
                             </InputField>
                         </div>
 
-                        <CountryInput {...register('country', { required: true, pattern: ValidationPatterns.charSpace })}>
-                            {errors.country?.type === 'required' && <InputInfoText>This field is required</InputInfoText>}
-                            {errors.country?.type === 'pattern' && <InputInfoText>Characters only</InputInfoText>}
-                        </CountryInput>
+                        <InputField title='Country' {...register('country')}>
+                            {errors.country && <InputInfoText>{errors.country?.message}</InputInfoText>}
+                        </InputField>
                     </div>
                 </div>
 

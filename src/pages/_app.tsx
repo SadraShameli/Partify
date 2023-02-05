@@ -8,8 +8,8 @@ import { api } from '../utils/api';
 import Footer from '../components/Home/Footer/Footer';
 import NavigationBar from '../components/Home/NavBar/NavBar';
 
-import '../styles/fonts.css'
-import '../styles/globals.css'
+import '../styles/fonts.css';
+import '../styles/globals.css';
 
 let reloadInterval: NodeJS.Timer;
 
@@ -71,13 +71,13 @@ const MyApp: AppType<{ session: Session | null }> = ({ Component, pageProps: { s
                 <link rel='shortcut icon' href='/favicon.ico' />
             </Head>
 
-            <NavigationBar />
-
             <SessionProvider session={session}>
-                <Component {...pageProps} />
-            </SessionProvider>
+                <NavigationBar />
 
-            <Footer />
+                <Component {...pageProps} />
+
+                <Footer />
+            </SessionProvider>
         </>
     );
 };

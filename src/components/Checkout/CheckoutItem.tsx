@@ -3,15 +3,12 @@ import type { IProduct } from '../Product/ProductTypes';
 import { GeoProps } from '../../hooks/useGeo';
 
 export default function CheckoutItem({ product, onRemove }: { product: IProduct; onRemove: () => void }) {
-    console.log(product);
     return (
         <div className='flex justify-between'>
             <div className='flex w-full gap-5'>
-                {product.additionalImages.length && (
-                    <div className='relative h-36 w-24'>
-                        <Image src={product.additionalImages[0]} alt={product.name} priority fill />
-                    </div>
-                )}
+                <div className='relative h-36 w-24'>
+                    <Image src={product.image} alt={product.name} priority fill />
+                </div>
 
                 <div className='flex flex-1 justify-between gap-5 py-2'>
                     <div className='flex flex-col justify-between'>

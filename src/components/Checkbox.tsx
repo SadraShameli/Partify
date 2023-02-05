@@ -1,12 +1,22 @@
-export default function Checkbox({ title, children }: { title: string; children?: React.ReactNode }) {
+import { useId, forwardRef, type InputHTMLAttributes } from 'react';
+
+export interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
+    text: string;
+    children?: React.ReactNode;
+}
+
+export const CheckBox = forwardRef<HTMLInputElement, React.PropsWithChildren<IInputProps>>(({ text, children, ...rest }, ref) => {
+    const id = useId();
+
     return (
         <div className='flex'>
-            <label className='flex cursor-pointer items-center justify-center'>
-                <input className='checkbox-primary checkbox' type='checkbox' title={title} />
-                <span className='pl-3'>{title}</span>
-
+            <label className='flex cursor-pointer items-center justify-center' htmlFor={id}>
+                <input type='checkbox' id={id} ref={ref} {...rest} />
+                <span className='pl-3'>{text}</span>
                 {children}
             </label>
         </div>
     );
-}
+});
+
+CheckBox.displayName = 'CheckBox';

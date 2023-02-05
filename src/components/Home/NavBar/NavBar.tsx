@@ -1,7 +1,10 @@
 import Link from 'next/link';
-import Routes from '../../../routes';
+import Routes from '../../../utils/routes';
+import { useSession } from 'next-auth/react';
 
 export default function NavigationBar() {
+    const { data: session } = useSession();
+
     return (
         <nav className='pb-12'>
             <div className='fixed z-[9999] w-full bg-[rgba(255,255,255,0.7)] fill-none stroke-current py-3 text-sm saturate-[200%] backdrop-blur-[20px] dark:bg-[rgba(0,0,0,0.8)]'>
@@ -51,7 +54,7 @@ export default function NavigationBar() {
                             </svg>
                         </Link>
 
-                        <Link type='button' title='Account' href={Routes.signup}>
+                        <Link type='button' title='Account' href={session ? Routes.account : Routes.signUp}>
                             <svg className='h-5 w-5' viewBox='0 0 24 24'>
                                 <circle cx='12' cy='7.25' r='5.73' />
                                 <path className='fill-none' d='M1.5,23.48l.37-2.05A10.3,10.3,0,0,1,12,13h0a10.3,10.3,0,0,1,10.13,8.45l.37,2.05' />

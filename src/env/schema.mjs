@@ -1,29 +1,29 @@
 import { z } from 'zod';
 
 export const serverSchema = z.object({
-    DATABASE_URL: z.string().url(),
     NODE_ENV: z.enum(['development', 'test', 'production']),
-    NEXTAUTH_SECRET: process.env.NODE_ENV === 'production' ? z.string().min(1) : z.string().min(1).optional(),
+    DATABASE_URL: z.string().url(),
     NEXTAUTH_URL: z.preprocess((str) => process.env.VERCEL_URL ?? str, process.env.VERCEL ? z.string() : z.string().url()),
+    NEXTAUTH_SECRET: process.env.NODE_ENV === 'production' ? z.string().min(1) : z.string().min(1).optional(),
 });
 
 export const serverEnv = {
-    DATABASE_URL: process.env.DATABASE_URL,
     NODE_ENV: process.env.NODE_ENV,
-    NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
+    DATABASE_URL: process.env.DATABASE_URL,
     NEXTAUTH_URL: process.env.NEXTAUTH_URL,
+    NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
 };
 
 export const clientSchema = z.object({
     APPLE_ID: z.string(),
     APPLE_SECRET: z.string(),
-    GOOGLE_ID: z.string(),
-    GOOGLE_SECRET: z.string(),
+    GOOGLE_CLIENT_ID: z.string(),
+    GOOGLE_CLIENT_SECRET: z.string(),
 });
 
 export const clientEnv = {
     APPLE_ID: process.env.APPLE_ID,
     APPLE_SECRET: process.env.APPLE_SECRET,
-    GOOGLE_ID: process.env.GOOGLE_ID,
-    GOOGLE_SECRET: process.env.GOOGLE_SECRET,
+    GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
+    GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
 };

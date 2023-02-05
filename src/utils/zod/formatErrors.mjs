@@ -1,4 +1,4 @@
-export default function formatZodErrors(error) {
+export default function formatErrors(error) {
     const errors = error.format();
 
     return Object.entries(errors)

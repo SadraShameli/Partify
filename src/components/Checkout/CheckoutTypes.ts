@@ -1,17 +1,19 @@
-export type ContactInformation = {
-    firstName: string;
-    lastName: string;
-    email: string;
-    phone: string;
-    notes?: string;
-};
+import { z } from 'zod';
+import { commonSchema } from './../../utils/zod/commonSchema';
 
-export type ShippingInformation = {
-    address: string;
-    city: string;
-    country: string;
-    postcode: string;
-};
+export const CheckoutSchema = z.object({
+    firstName: commonSchema.name,
+    lastName: commonSchema.name,
+    email: commonSchema.email,
+    phone: commonSchema.phone,
+    notes: z.string().optional(),
+    address: commonSchema.address,
+    city: commonSchema.city,
+    country: commonSchema.country,
+    postcode: commonSchema.postcode,
+});
+
+export type Checkout = z.infer<typeof CheckoutSchema>;
 
 export type DeliveryMethod = {
     method: string;
