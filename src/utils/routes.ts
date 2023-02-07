@@ -9,6 +9,7 @@ const Routes = {
     signIn: '/signin/',
     signOut: '/signout/',
     checkout: '/checkout/',
+    favorites: '/favorites/',
 };
 
 import { z } from 'zod';

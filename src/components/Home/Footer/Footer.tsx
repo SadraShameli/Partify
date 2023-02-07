@@ -30,7 +30,7 @@ export default function Footer() {
                                         {value.Items.map((value, index) => {
                                             return (
                                                 <li key={index}>
-                                                    <Link className='hover:underline' href={value.Url} title={value.Title}>
+                                                    <Link className='hover:underline hover:link-primary' href={value.Url} title={value.Title}>
                                                         {value.Title}
                                                     </Link>
                                                 </li>

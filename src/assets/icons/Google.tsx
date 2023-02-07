@@ -1,6 +1,6 @@
 import { IIconProps } from '../../types/Icon';
 
-export default function GoogleIcon({ props }: { props?: IIconProps }) {
+export default function GoogleIcon(props: IIconProps) {
     return (
         <svg viewBox='0 0 16 16' {...props}>
             <path
