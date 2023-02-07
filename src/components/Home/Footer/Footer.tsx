@@ -4,10 +4,10 @@ import { NavigationList, PaymentIcons, SocialIcons } from './FooterContent';
 export default function Footer() {
     return (
         <div className='mt-32 border-t'>
-            <footer className='[&a]:text-dark2 test container'>
+            <footer className='container'>
                 <div className='flex flex-wrap items-center justify-between gap-20 py-20'>
                     <div className='grid w-full justify-items-center'>
-                        <h2>Partify</h2>
+                        <h1>Partify</h1>
 
                         <div className='flex content-center items-center gap-5'>
                             {PaymentIcons.map((value, index) => {
@@ -24,13 +24,13 @@ export default function Footer() {
                         {NavigationList.map((value, index) => {
                             return (
                                 <div key={index}>
-                                    <p className='font-bold'>{value.Title}</p>
+                                    <p className='text-sm font-bold'>{value.Title}</p>
 
-                                    <ul className='mt-3 space-y-2'>
+                                    <ul className='mt-3 space-y-2 text-sm font-light'>
                                         {value.Items.map((value, index) => {
                                             return (
                                                 <li key={index}>
-                                                    <Link href={value.Url} title={value.Title}>
+                                                    <Link className='hover:underline' href={value.Url} title={value.Title}>
                                                         {value.Title}
                                                     </Link>
                                                 </li>
@@ -44,14 +44,14 @@ export default function Footer() {
                 </div>
 
                 <div className='flex flex-wrap items-center justify-between gap-8 border-t py-10'>
-                    <p>Copyright © 2023 Partify</p>
+                    <p>Copyright © 2023 Partify. All rights reserved.</p>
 
                     <div className='flex gap-10'>
                         {SocialIcons.map((value, index) => {
                             return (
-                                <a key={index} href={value.Url} title={value.Title} className='h-6 w-6'>
+                                <Link className='h-6 w-6 hover:text-primary' key={index} href={value.Url} title={value.Title}>
                                     {value.Icon}
-                                </a>
+                                </Link>
                             );
                         })}
                     </div>

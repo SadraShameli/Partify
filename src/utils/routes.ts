@@ -8,7 +8,6 @@ const Routes = {
     account: '/account/',
     signIn: '/signin/',
     signOut: '/signout/',
-    signUp: '/signup/',
     checkout: '/checkout/',
 };
 

@@ -35,7 +35,7 @@ export default function ProductViewPage(props: InferGetServerSidePropsType<typeo
     const { data: product } = api.products.getProduct.useQuery({ id: Number.parseInt(id) });
 
     return (
-        <main>
+        <main className='container'>
             <div className='container'>{product && <ProductOverView product={product} />}</div>
         </main>
     );

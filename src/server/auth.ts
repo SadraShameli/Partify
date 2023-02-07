@@ -1,12 +1,13 @@
 import { type GetServerSidePropsContext } from 'next';
 import AppleProvider from 'next-auth/providers/apple';
 import GoogleProvider from 'next-auth/providers/google';
+import TwitchProvider from 'next-auth/providers/twitch';
+import CredentialsProvider from 'next-auth/providers/credentials';
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
 import { getServerSession, type NextAuthOptions, type DefaultSession } from 'next-auth';
 
-import { env } from '../env/server.mjs';
-import Routes from '../utils/routes';
 import { prisma } from './db';
+import { env } from '../env/server.mjs';
 
 declare module 'next-auth' {
     interface Session extends DefaultSession {
@@ -34,6 +35,10 @@ export const authOptions: NextAuthOptions = {
         AppleProvider({
             clientId: env.APPLE_ID,
             clientSecret: env.APPLE_SECRET,
+        }),
+        TwitchProvider({
+            clientId: env.TWITCH_CLIENT_ID,
+            clientSecret: env.TWITCH_CLIENT_SECRET,
         }),
     ],
 };

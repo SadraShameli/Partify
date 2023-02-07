@@ -1,5 +1,5 @@
 export default function Home() {
-    return <main>{/* <div className='container'>{product && <ProductOverView product={product} />}</div> */}</main>;
+    return <main className='container'>{/* <div className='container'>{product && <ProductOverView product={product} />}</div> */}</main>;
 }
 
 /*

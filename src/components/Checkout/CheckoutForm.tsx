@@ -74,7 +74,7 @@ export default function CheckoutForm() {
                         </svg>
                     </h2>
 
-                    <div className='form-control gap-5'>
+                    <div className='grid gap-5'>
                         <InputField title='Address, suite, etc.' {...register('address')}>
                             {errors.address && <InputInfoText>{errors.address?.message}</InputInfoText>}
                         </InputField>
@@ -145,7 +145,7 @@ export default function CheckoutForm() {
                                 </div>
                             </div>
 
-                            <button type='submit' className='btn-primary btn w-full'>
+                            <button type='submit' className='btn btn-primary w-full'>
                                 Confirm order
                             </button>
                         </div>

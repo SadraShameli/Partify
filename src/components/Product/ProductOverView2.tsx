@@ -95,7 +95,7 @@ export default function ProductOverView2({ product }: { product: IProduct }) {
                         </div>
 
                         <div className='flex flex-wrap gap-3'>
-                            <button type='button' className='btn-primary btn flex-1 gap-2' onClick={() => addToBag(product)}>
+                            <button type='button' className='btn btn-primary flex-1 gap-2' onClick={() => addToBag(product)}>
                                 {isAddedToBag ? (
                                     <>
                                         Added to bag
@@ -116,7 +116,7 @@ export default function ProductOverView2({ product }: { product: IProduct }) {
 
                             <button
                                 type='button'
-                                className='btn gap-2 active:btn-active [&:not(:active)]:btn-outline'
+                                className='btn active:btn-active [&:not(:active)]:btn-outline gap-2'
                                 onClick={() => {
                                     if (isWishListed) {
                                         removeFromWishList(product);

@@ -3,30 +3,32 @@
 @tailwind utilities;
 
 @layer base {
-    :root {
-        @apply dark:[color-scheme:dark];
-    }
-
     * {
-        @apply scroll-smooth accent-primary transition-all duration-150 ease-out dark:border-[#424245a1];
-    }
+        @apply scroll-smooth dark:border-dark;
 
-    body {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-rendering: optimizeLegibility;
     }
 
+    body {
+        @apply bg-base stroke-none text-neutral dark:bg-base-dark dark:text-neutral-dark;
+    }
+
+    body * {
+        @apply transition-all duration-150 ease-out;
+    }
+
+    h1 {
+        @apply mb-6 text-3xl font-bold;
+    }
+
     h2 {
-        @apply mb-[1em] text-2xl font-bold;
+        @apply mb-6 text-2xl font-bold;
     }
 
     h2 > svg {
         @apply h-8 w-8;
-    }
-
-    a {
-        @apply hover:cursor-pointer hover:text-primary hover:underline;
     }
 
     img {
@@ -36,6 +38,16 @@
     path {
         stroke-linejoin: round;
         stroke-linecap: round;
+    }
+
+    input[type='checkbox'] {
+    }
+
+    input[type='radio'] {
+    }
+
+    button > svg {
+        @apply h-6 w-6;
     }
 }
 
@@ -61,18 +73,16 @@
     }
 
     .btn {
-        @apply rounded normal-case;
+        @apply flex justify-center rounded border py-3 px-4 normal-case;
     }
 
-    .btn > svg {
-        @apply h-6 w-6;
+    .btn-primary {
+        @apply border-none bg-primary text-white hover:bg-primary-hover;
     }
+}
 
-    input[type='checkbox'] {
-        @apply checkbox-primary checkbox;
-    }
-
-    input[type='radio'] {
-        @apply radio-primary radio radio-sm;
+@layer utilities {
+    .prose {
+        @apply text-current;
     }
 }

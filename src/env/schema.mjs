@@ -15,10 +15,12 @@ export const serverEnv = {
 };
 
 export const clientSchema = z.object({
-    APPLE_ID: z.string(),
-    APPLE_SECRET: z.string(),
-    GOOGLE_CLIENT_ID: z.string(),
-    GOOGLE_CLIENT_SECRET: z.string(),
+    APPLE_ID: z.string().min(1),
+    APPLE_SECRET: z.string().min(1),
+    GOOGLE_CLIENT_ID: z.string().min(1),
+    GOOGLE_CLIENT_SECRET: z.string().min(1),
+    TWITCH_CLIENT_ID: z.string().min(1),
+    TWITCH_CLIENT_SECRET: z.string().min(1),
 });
 
 export const clientEnv = {
@@ -26,4 +28,6 @@ export const clientEnv = {
     APPLE_SECRET: process.env.APPLE_SECRET,
     GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
     GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
+    TWITCH_CLIENT_ID: process.env.TWITCH_CLIENT_ID,
+    TWITCH_CLIENT_SECRET: process.env.TWITCH_CLIENT_SECRET,
 };

@@ -6,3 +6,13 @@
     font-named-instance: 'Regular';
     src: url('../assets/fonts/Inter-roman-latin.woff2') format('woff2');
 }
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../assets/fonts/Lato-Regular.woff2');
+}
+
+@font-face {
+    font-family: 'SF Display';
+    src: url('../assets/fonts/SF-Display.woff2');
+}
