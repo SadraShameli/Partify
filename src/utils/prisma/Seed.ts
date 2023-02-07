@@ -14,6 +14,6 @@ export default async function Seed() {
     await SeedMainCategory();
     await SeedSubCategory();
     await SeedBrandCategory();
-    await SeedVariant();
     await SeedProduct();
+    await SeedVariant();
 }

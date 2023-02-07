@@ -4,7 +4,7 @@ import { NavigationList, PaymentIcons, SocialIcons } from './FooterContent';
 export default function Footer() {
     return (
         <div className='mt-32 border-t'>
-            <footer className='container'>
+            <footer className='container text-sm'>
                 <div className='flex flex-wrap items-center justify-between gap-20 py-20'>
                     <div className='grid w-full justify-items-center'>
                         <h1>Partify</h1>
@@ -24,9 +24,9 @@ export default function Footer() {
                         {NavigationList.map((value, index) => {
                             return (
                                 <div key={index}>
-                                    <p className='text-sm font-bold'>{value.Title}</p>
+                                    <p className='font-bold'>{value.Title}</p>
 
-                                    <ul className='mt-3 space-y-2 text-sm font-light'>
+                                    <ul className='mt-3 space-y-2 font-light'>
                                         {value.Items.map((value, index) => {
                                             return (
                                                 <li key={index}>

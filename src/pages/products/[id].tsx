@@ -1,6 +1,6 @@
 import superjson from 'superjson';
 import { createProxySSGHelpers } from '@trpc/react-query/ssg';
-import { type InferGetServerSidePropsType, type GetServerSidePropsContext } from 'next/types';
+import { InferGetServerSidePropsType, GetServerSidePropsContext } from 'next/types';
 
 import { api } from '../../utils/api';
 import { prisma } from '../../server/db';
@@ -19,7 +19,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext<{ id
         transformer: superjson,
     });
 
-    await trcpSSG.products.getProduct.fetch({ id: Number.parseInt(id) });
+    await trcpSSG.products.getProductById.fetch({ id: id });
 
     return {
         props: {
@@ -32,11 +32,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext<{ id
 export default function ProductViewPage(props: InferGetServerSidePropsType<typeof getServerSideProps>) {
     const { id } = props;
 
-    const { data: product } = api.products.getProduct.useQuery({ id: Number.parseInt(id) });
+    const { data: product } = api.products.getProductById.useQuery({ id: id });
 
-    return (
-        <main className='container'>
-            <div className='container'>{product && <ProductOverView product={product} />}</div>
-        </main>
-    );
+    return <main className='container mt-hero'>{product && <ProductOverView product={product} />}</main>;
 }

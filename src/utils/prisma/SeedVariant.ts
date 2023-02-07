@@ -6,12 +6,12 @@ export default async function SeedVariant() {
             {
                 name: 'Razer Basilisk Ultimate',
                 stock: 0,
-                productId: 1,
+                productName: 'Razer Basilisk Ultimate',
             },
             {
                 name: 'Razer Basilisk Ultimate + Docking Station',
                 stock: 6,
-                productId: 1,
+                productName: 'Razer Basilisk Ultimate',
             },
         ],
     });

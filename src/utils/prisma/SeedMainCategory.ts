@@ -5,119 +5,147 @@ export default async function SeedMainCategory() {
         data: [
             {
                 name: 'Laptops',
-                categoryId: 1,
+                categoryName: 'Laptops, desktops & monitors',
             },
             {
                 name: 'Gaming laptops',
-                categoryId: 1,
+                categoryName: 'Laptops, desktops & monitors',
             },
             {
                 name: 'Desktops',
-                categoryId: 1,
+                categoryName: 'Laptops, desktops & monitors',
             },
             {
                 name: 'Gaming desktops',
-                categoryId: 1,
+                categoryName: 'Laptops, desktops & monitors',
             },
             {
                 name: 'Apple MacBook',
-                categoryId: 1,
+                categoryName: 'Laptops, desktops & monitors',
             },
             {
                 name: 'Apple MacStudio',
-                categoryId: 1,
-            },
-            {
-                name: 'TV',
-                categoryId: 2,
-            },
-            {
-                name: '4K TV',
-                categoryId: 2,
-            },
-            {
-                name: 'Gaming TV',
-                categoryId: 2,
-            },
-            {
-                name: 'Monitors',
-                categoryId: 2,
-            },
-            {
-                name: 'Gaming monitors',
-                categoryId: 2,
+                categoryName: 'Laptops, desktops & monitors',
             },
             {
                 name: 'Mouses',
-                categoryId: 3,
+                categoryName: 'Computer parts & peripherals',
             },
             {
                 name: 'Keyboards',
-                categoryId: 3,
+                categoryName: 'Computer parts & peripherals',
             },
             {
                 name: 'Speakers',
-                categoryId: 3,
+                categoryName: 'Computer parts & peripherals',
             },
             {
                 name: 'CPU',
-                categoryId: 3,
+                categoryName: 'Computer parts & peripherals',
             },
             {
                 name: 'GPU',
-                categoryId: 3,
+                categoryName: 'Computer parts & peripherals',
             },
             {
                 name: 'RAM',
-                categoryId: 3,
+                categoryName: 'Computer parts & peripherals',
             },
             {
                 name: 'Hard drives',
-                categoryId: 4,
+                categoryName: 'Memory & storage',
             },
             {
                 name: 'Internal hard drives',
-                categoryId: 4,
+                categoryName: 'Memory & storage',
             },
             {
                 name: 'Solid state drives',
-                categoryId: 4,
+                categoryName: 'Memory & storage',
             },
             {
                 name: 'Internal Solid state drives',
-                categoryId: 4,
+                categoryName: 'Memory & storage',
             },
             {
                 name: 'SD cards',
-                categoryId: 4,
+                categoryName: 'Memory & storage',
             },
             {
                 name: 'NAS',
-                categoryId: 4,
+                categoryName: 'Memory & storage',
             },
             {
                 name: 'WiFi boosters',
-                categoryId: 5,
+                categoryName: 'Internet & Network',
             },
             {
                 name: 'Access points',
-                categoryId: 5,
+                categoryName: 'Internet & Network',
             },
             {
                 name: 'Network routers',
-                categoryId: 5,
+                categoryName: 'Internet & Network',
             },
             {
                 name: 'Mesh WiFi routers',
-                categoryId: 5,
+                categoryName: 'Internet & Network',
             },
             {
                 name: 'Network switches',
-                categoryId: 5,
+                categoryName: 'Internet & Network',
             },
             {
                 name: 'Powerline adapters',
-                categoryId: 5,
+                categoryName: 'Internet & Network',
+            },
+            {
+                name: 'Tablets',
+                categoryName: 'Tablet & e-readers',
+            },
+            {
+                name: 'Apple iPad',
+                categoryName: 'Tablet & e-readers',
+            },
+            {
+                name: 'Samsung Tablets',
+                categoryName: 'Tablet & e-readers',
+            },
+            {
+                name: 'Lenovo Tablets',
+                categoryName: 'Tablet & e-readers',
+            },
+            {
+                name: 'Tablet covers',
+                categoryName: 'Tablet & e-readers',
+            },
+            {
+                name: 'E-readers',
+                categoryName: 'Tablet & e-readers',
+            },
+            {
+                name: 'Business laptops',
+                categoryName: 'Business',
+            },
+            {
+                name: 'Business monitors',
+                categoryName: 'Business',
+            },
+            {
+                name: 'Business printers',
+                categoryName: 'Business',
+            },
+            {
+                name: 'Desks',
+                categoryName: 'Business',
+            },
+            {
+                name: 'Desk chairs',
+                categoryName: 'Business',
+            },
+            {
+                name: 'Home Office Store',
+                categoryName: 'Business',
             },
         ],
     });

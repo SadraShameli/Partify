@@ -1,14 +1,18 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import Link from 'next/link';
 import { signIn } from 'next-auth/react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
 import Card from '../Card';
-import Routes from '../../utils/routes';
 import { CheckBox } from '../CheckBox';
-import { UserSignUpSchema, UserSignUpForm } from './UserTypes';
 import { InputField, InputInfoText } from '../InputField';
-import { GoogleIcon, AppleIcon, TwitchIcon } from '../../assets/Icons';
+import { UserSignUpSchema, UserSignUpForm } from './UserTypes';
+
+import Routes from '../../utils/routes';
+import GoogleIcon from '../../assets/icons/Google';
+import AppleIcon from '../../assets/icons/Apple';
+import TwitchIcon from '../../assets/icons/Twitch';
 
 export default function UserSignUp() {
     const {
@@ -17,7 +21,10 @@ export default function UserSignUp() {
         formState: { errors },
     } = useForm<UserSignUpForm>({ resolver: zodResolver(UserSignUpSchema), defaultValues: { terms: true } });
 
-    const onSubmit: SubmitHandler<UserSignUpForm> = async (data) => {};
+    // eslint-disable-next-line @typescript-eslint/require-await
+    const onSubmit: SubmitHandler<UserSignUpForm> = async (data) => {
+        console.log(data);
+    };
 
     return (
         <div className='grid place-items-center'>
@@ -65,35 +72,30 @@ export default function UserSignUp() {
                             {errors.email && <InputInfoText>{errors.email?.message}</InputInfoText>}
                         </InputField>
 
-                        <InputField placeholder='&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;' title='Password' type='password' {...register('password')}>
+                        <InputField title='Password' type='password' {...register('password')}>
                             {errors.password && <InputInfoText>{errors.password?.message}</InputInfoText>}
                         </InputField>
 
-                        <InputField
-                            placeholder='&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;'
-                            title='Confirm Password'
-                            type='password'
-                            {...register('confirmPassword')}
-                        >
+                        <InputField title='Confirm password' type='password' {...register('confirmPassword')}>
                             {errors.confirmPassword && <InputInfoText>{errors.confirmPassword?.message}</InputInfoText>}
                         </InputField>
 
                         <CheckBox text='I accept the' {...register('terms')}>
                             <Link className='pl-1 text-primary' title='Terms and Conditions' type='button' href={Routes.termsAndConditions}>
-                                Terms and Conditions.
+                                Terms and Conditions
                             </Link>
                         </CheckBox>
 
                         {errors.terms && <InputInfoText>{errors.terms?.message}</InputInfoText>}
 
-                        <button className='btn btn-primary' title='Create an account' type='submit'>
+                        <button className='btn-primary btn' title='Create an account' type='submit'>
                             Create an account
                         </button>
 
                         <div className='flex gap-2'>
                             <p>Already have an account?</p>
 
-                            <Link className='text-primary ' title='Sign in page' type='button' href={Routes.signIn}>
+                            <Link className='text-primary' title='Sign in page' type='button' href={Routes.signIn}>
                                 Sign in here
                             </Link>
                         </div>

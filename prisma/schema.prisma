@@ -33,7 +33,7 @@ model Account {
     access_token      String? @db.Text
     expires_at        Int?
     token_type        String?
-    scope             String? 
+    scope             String?
     id_token          String? @db.Text
     session_state     String?
     user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
@@ -67,83 +67,81 @@ enum Currencies {
 
 model Currency {
     id       Int        @id @default(autoincrement())
-    currency Currencies @unique
+    symbol   Currencies @unique
     products Product[]
     country  Country[]
 }
 
 model Country {
-    id         Int      @id @default(autoincrement())
-    name       String
-    code       Int
-    tax        Float
-    currencyId Int
-    currency   Currency @relation(fields: [currencyId], references: [id])
-    cities     City[]
-
-    @@unique([name, code, currencyId])
+    id             Int        @id @default(autoincrement())
+    name           String     @unique
+    code           Int        @unique
+    tax            Float
+    currencySymbol Currencies @unique
+    currency       Currency   @relation(fields: [currencySymbol], references: [symbol])
+    cities         City[]
 }
 
 model City {
-    id        Int     @id @default(autoincrement())
-    name      String
-    countryId Int
-    country   Country @relation(fields: [countryId], references: [id])
+    id          String  @id @default(cuid())
+    name        String  @unique
+    countryName String
+    country     Country @relation(fields: [countryName], references: [name])
 }
 
 model ProductRange {
-    id       Int        @id @default(autoincrement())
+    id       String     @id @default(cuid())
     name     String     @unique
     category Category[]
 }
 
 model Category {
-    id             Int            @id @default(autoincrement())
-    name           String
-    productRangeId Int
-    productRange   ProductRange   @relation(fields: [productRangeId], references: [id])
-    mainCategories MainCategory[]
+    id               String         @id @default(cuid())
+    name             String         @unique
+    productRangeName String
+    productRange     ProductRange   @relation(fields: [productRangeName], references: [name])
+    mainCategories   MainCategory[]
 }
 
 model MainCategory {
-    id          Int           @id @default(autoincrement())
-    name        String
-    categoryId  Int
-    category    Category      @relation(fields: [categoryId], references: [id])
-    subCategory SubCategory[]
+    id           String        @id @default(cuid())
+    name         String        @unique
+    categoryName String
+    category     Category      @relation(fields: [categoryName], references: [name])
+    subCategory  SubCategory[]
 }
 
 model SubCategory {
-    id             Int             @id @default(autoincrement())
-    name           String
-    mainCategoryId Int
-    mainCategory   MainCategory    @relation(fields: [mainCategoryId], references: [id])
-    brands         BrandCategory[]
+    id               String          @id @default(cuid())
+    name             String          @unique
+    mainCategoryName String
+    mainCategory     MainCategory    @relation(fields: [mainCategoryName], references: [name])
+    brands           BrandCategory[]
 }
 
 model BrandCategory {
-    id            Int         @id @default(autoincrement())
-    name          String
-    subCategoryId Int
-    subCategory   SubCategory @relation(fields: [subCategoryId], references: [id])
-    product       Product[]
+    id              String      @id @default(cuid())
+    name            String      @unique
+    subCategoryName String
+    subCategory     SubCategory @relation(fields: [subCategoryName], references: [name])
+    product         Product[]
 }
 
 model Variant {
-    id        Int      @id @default(autoincrement())
-    name      String
-    stock     Int
-    productId Int?
-    product   Product? @relation(fields: [productId], references: [id])
+    id          String  @id @default(cuid())
+    name        String  @unique
+    stock       Int
+    productName String
+    product     Product @relation(fields: [productName], references: [name])
 }
 
 model Product {
-    id               Int                 @id @default(autoincrement())
+    id               String              @id @default(cuid())
     createdAt        DateTime            @default(now())
     updatedAt        DateTime            @updatedAt
-    name             String
-    brandId          Int
-    brand            BrandCategory       @relation(fields: [brandId], references: [id])
+    name             String              @unique
+    brandName        String
+    brand            BrandCategory       @relation(fields: [brandName], references: [name])
     price            Float
     color            String
     stockCount       Int
@@ -155,7 +153,7 @@ model Product {
     starCount        Int
     reviewCount      Int
     currencySymbol   Currencies
-    currency         Currency            @relation(fields: [currencySymbol], references: [currency])
+    currency         Currency            @relation(fields: [currencySymbol], references: [symbol])
     image            String
     additionalImages String[]
 }

@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
 import { useEffect, useState } from 'react';
-import type { IProduct } from '../ProductTypes';
+import { IProduct } from '../ProductTypes';
 
 export default function UseProductStorage(key: string, product?: IProduct) {
     const [products, setProducts] = useState(() => {

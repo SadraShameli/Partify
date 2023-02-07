@@ -5,7 +5,7 @@ export default async function SeedSubCategory() {
         data: [
             {
                 name: 'Gaming Mouses',
-                mainCategoryId: 12,
+                mainCategoryName: 'Mouses',
             },
         ],
     });

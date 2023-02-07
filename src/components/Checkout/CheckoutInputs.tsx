@@ -3,7 +3,7 @@ import { forwardRef } from 'react';
 // import countries from 'countries-list';
 
 import { InputField } from '../InputField';
-import type { IInputProps } from '../InputField';
+import { IInputProps } from '../InputField';
 
 // function FlagEmojiToPNG({ flag }: { flag: string }) {
 //     const countryCode = Array.from(flag, (codeUnit) => codeUnit.codePointAt(0))

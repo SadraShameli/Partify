@@ -30,62 +30,42 @@ module.exports = {
             margin: {
                 hero: '100px',
             },
-            colors: {
-                primary: {
-                    dark: '#0071e3',
-                    DEFAULT: '#0071e3',
-                    light: '#0071e3',
-                },
-                'primary-hover': {
-                    dark: '#0077ed',
-                    DEFAULT: '#0077ed',
-                    light: '#0077ed',
-                },
-                secondary: {
-                    dark: '#0071e3',
-                    DEFAULT: '#57534e',
-                    light: '#0071e3',
-                },
-                accent: {
-                    dark: '#0071e3',
-                    DEFAULT: '#37CDBE',
-                    light: '#0071e3',
-                },
-                neutral: {
-                    dark: '#cecece',
-                    DEFAULT: '#1d1d1f',
-                    light: '#1d1d1f',
-                },
-                base: {
-                    dark: '#000',
-                    DEFAULT: '#fff',
-                    light: '#fff',
-                },
-                info: {
-                    dark: colors.blue[600],
-                    DEFAULT: colors.blue[600],
-                    light: colors.blue[800],
-                },
-                success: {
-                    dark: colors.green[700],
-                    DEFAULT: colors.green[700],
-                    light: colors.green[700],
-                },
-                warning: {
-                    dark: colors.yellow[700],
-                    DEFAULT: colors.yellow[700],
-                    light: colors.yellow[800],
-                },
-                error: {
-                    dark: colors.red[600],
-                    DEFAULT: colors.red[600],
-                    light: colors.red[600],
+        },
+    },
+    daisyui: {
+        themes: [
+            {
+                light: {
+                    primary: '#0071e3',
+                    secondary: '#57534e',
+                    accent: '#37CDBE',
+                    neutral: '#1d1d1f',
+                    'base-100': '#fff',
+                    info: colors.blue[800],
+                    success: colors.green[700],
+                    warning: colors.yellow[800],
+                    error: colors.red[600],
                 },
             },
-        },
+            {
+                dark: {
+                    primary: '#0071e3',
+                    secondary: '#57534e',
+                    accent: '#37CDBE',
+                    neutral: '#cecece',
+                    'base-100': '#000',
+                    info: colors.blue[600],
+                    success: colors.green[700],
+                    warning: colors.yellow[700],
+                    error: colors.red[600],
+                },
+            },
+        ],
+        logs: false,
     },
     plugins: [
         require('@tailwindcss/typography'),
+        require('daisyui'),
         function ({ addVariant }) {
             addVariant('children', '& > *'), addVariant('all-children', '& *');
         },

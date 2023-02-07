@@ -1,8 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-
 import Image from 'next/image';
 import { GeoProps } from '../../hooks/useGeo';
-import { type IProduct } from './ProductTypes';
+import { IProduct } from './ProductTypes';
 
 export default function ProductCard(product: IProduct) {
     return (

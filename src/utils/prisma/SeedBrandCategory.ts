@@ -5,7 +5,7 @@ export default async function SeedBrandCategory() {
         data: [
             {
                 name: 'Razer',
-                subCategoryId: 1,
+                subCategoryName: 'Gaming Mouses',
             },
         ],
     });

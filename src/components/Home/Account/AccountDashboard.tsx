@@ -70,9 +70,9 @@ export default function AccountDashboard({ name, email, image }: { name?: string
                     </svg>
 
                     <p className='mt-5 font-semibold'>You are up-to-date :&#x29;</p>
-                    <p className='text-sm'>If there are any updates on your orders, returns, or refunds, you'll find them here.</p>
+                    <p className='text-sm'>If there are any updates on your orders, returns, or refunds, you&apos;ll find them here.</p>
 
-                    <Link className='btn btn-primary mt-2' type='button' href='/'>
+                    <Link className='btn-primary btn mt-2' type='button' href='/'>
                         Continue shopping
                     </Link>
                 </div>

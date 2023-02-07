@@ -1,23 +1,30 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import Link from 'next/link';
-import { useForm } from 'react-hook-form';
-import { type UserSignInForm, type UserSignInSchema } from './UserTypes';
+import { signIn } from 'next-auth/react';
+import { useForm, SubmitHandler } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
 
 import Card from '../Card';
 import Routes from '../../utils/routes';
 import { CheckBox } from '../CheckBox';
 import { InputField, InputInfoText } from '../InputField';
-import { GoogleIcon, AppleIcon } from '../../assets/Icons';
+import { UserSignInForm, UserSignInSchema } from './UserTypes';
+
+import GoogleIcon from '../../assets/icons/Google';
+import AppleIcon from '../../assets/icons/Apple';
+import TwitchIcon from '../../assets/icons/Twitch';
 
 export default function UserSignIn() {
     const {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm<UserSignInForm>({ reValidateMode: 'onChange' });
+    } = useForm<UserSignInForm>({ resolver: zodResolver(UserSignInSchema) });
 
-    function onSubmit(data: UserSignInForm) {
+    // eslint-disable-next-line @typescript-eslint/require-await
+    const onSubmit: SubmitHandler<UserSignInForm> = async (data) => {
         console.log(data);
-    }
+    };
 
     return (
         <div className='grid place-items-center'>
@@ -32,15 +39,20 @@ export default function UserSignIn() {
                     </h2>
 
                     <div className='grid gap-8'>
-                        <div className='grid gap-5 sm:grid-cols-2'>
-                            <button className='btn-outline btn gap-2' type='button'>
-                                Sign in with Google
-                                <GoogleIcon />
+                        <button className='btn-outline btn gap-2' type='button' onClick={() => signIn('google')}>
+                            <GoogleIcon />
+                            Sign in with Google
+                        </button>
+
+                        <div className='grid gap-5 sm:grid-cols-2 '>
+                            <button className='btn-outline btn gap-2' type='button' onClick={() => signIn('apple')}>
+                                <AppleIcon />
+                                Sign in with Apple
                             </button>
 
-                            <button className='btn-outline btn gap-2' type='button'>
-                                Sign in with Apple
-                                <AppleIcon />
+                            <button className='btn-outline btn gap-2' type='button' onClick={() => signIn('twitch')}>
+                                <TwitchIcon />
+                                Sign in with Twitch
                             </button>
                         </div>
 
@@ -62,7 +74,7 @@ export default function UserSignIn() {
                             </Link>
                         </div>
 
-                        <button className='btn btn-primary' title='Login to your account'>
+                        <button className='btn-primary btn' title='Login to your account'>
                             Login to your account
                         </button>
 

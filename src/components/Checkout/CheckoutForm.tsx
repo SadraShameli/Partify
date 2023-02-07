@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import NoSSR from 'react-no-ssr';
 import { useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -5,7 +6,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 
 import CheckoutItem from './CheckoutItem';
 import { DeliveryMethods } from './CheckoutTypes';
-import { CheckoutSchema, type Checkout, type DeliveryMethod } from './CheckoutTypes';
+import { CheckoutSchema, Checkout, DeliveryMethod } from './CheckoutTypes';
 
 import { CardRadio } from '../CardRadio';
 import { GeoProps } from '../../hooks/useGeo';
@@ -25,6 +26,7 @@ export default function CheckoutForm() {
         formState: { errors },
     } = useForm<Checkout>({ resolver: zodResolver(CheckoutSchema) });
 
+    // eslint-disable-next-line @typescript-eslint/require-await
     const onSubmit: SubmitHandler<Checkout> = async (data) => {
         console.log(data);
     };
@@ -145,7 +147,7 @@ export default function CheckoutForm() {
                                 </div>
                             </div>
 
-                            <button type='submit' className='btn btn-primary w-full'>
+                            <button type='submit' className='btn-primary btn w-full'>
                                 Confirm order
                             </button>
                         </div>

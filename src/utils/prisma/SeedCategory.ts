@@ -4,36 +4,36 @@ export default async function SeedCategory() {
     const category = await prisma.category.createMany({
         data: [
             {
-                name: 'Laptops, desktops',
-                productRangeId: 1,
+                name: 'Laptops, desktops & monitors',
+                productRangeName: 'Computers & tablets',
             },
             {
                 name: 'TV & monitors',
-                productRangeId: 1,
+                productRangeName: 'Computers & tablets',
             },
             {
                 name: 'Computer parts & peripherals',
-                productRangeId: 1,
+                productRangeName: 'Computers & tablets',
             },
             {
                 name: 'Memory & storage',
-                productRangeId: 1,
+                productRangeName: 'Computers & tablets',
             },
             {
                 name: 'Internet & Network',
-                productRangeId: 1,
+                productRangeName: 'Computers & tablets',
             },
             {
                 name: 'Tablet & e-readers',
-                productRangeId: 1,
+                productRangeName: 'Computers & tablets',
             },
             {
                 name: 'Gaming',
-                productRangeId: 1,
+                productRangeName: 'Computers & tablets',
             },
             {
                 name: 'Business',
-                productRangeId: 1,
+                productRangeName: 'Computers & tablets',
             },
         ],
     });

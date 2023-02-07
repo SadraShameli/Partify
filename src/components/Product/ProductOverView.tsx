@@ -2,7 +2,7 @@ import Image from 'next/image';
 import NoSSR from 'react-no-ssr';
 import { useState } from 'react';
 
-import { type IProduct } from './ProductTypes';
+import { IProduct } from './ProductTypes';
 import { GenerateRatingStars } from './ProductRating';
 import UseProductStorage from './Hooks/UseProductStorage';
 
@@ -49,7 +49,7 @@ export default function ProductOverView({ product }: { product: IProduct }) {
                         <div className='grid gap-3'>
                             <p className='text-4xl font-bold'>{product.name}</p>
                             <p className='text-3xl font-semibold'>{`${GeoProps.currentCurrency}${product.price}`}</p>
-                           
+
                             <div className='flex'>
                                 <GenerateRatingStars count={product.starCount} />
                                 <p className='ml-2 text-sm font-medium text-gray-500 dark:text-gray-400'>{product.reviewCount} reviews</p>
@@ -81,7 +81,7 @@ export default function ProductOverView({ product }: { product: IProduct }) {
 
                         <NoSSR>
                             <div className='flex flex-wrap items-center gap-3'>
-                                <button type='button' className='btn btn-primary flex-1 gap-3' onClick={() => addToBag(product)}>
+                                <button type='button' className='btn-primary btn flex-1 gap-3' onClick={() => addToBag(product)}>
                                     {isAddedToBag ? (
                                         <>
                                             Added to bag
@@ -101,7 +101,7 @@ export default function ProductOverView({ product }: { product: IProduct }) {
                                 </button>
 
                                 <button
-                                    className='btn ml-2 hover:border-current'
+                                    className='hover:border-current btn ml-2'
                                     onClick={() => {
                                         if (isWishListed) {
                                             removeFromWishList(product);

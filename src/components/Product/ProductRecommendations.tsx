@@ -1,5 +1,5 @@
 import ProductCard from './ProductCard';
-import { type IProduct } from './ProductTypes';
+import { IProduct } from './ProductTypes';
 
 export default function ProductRecommendations({ products }: { products: IProduct[] }) {
     return (

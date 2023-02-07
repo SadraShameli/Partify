@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 @layer base {
+    :root {
+        @apply dark:[color-scheme:dark];
+    }
+
     * {
         @apply scroll-smooth dark:border-dark;
 
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-rendering: optimizeLegibility;
-    }
-
-    body {
-        @apply bg-base stroke-none text-neutral dark:bg-base-dark dark:text-neutral-dark;
     }
 
     body * {
@@ -40,14 +40,16 @@
         stroke-linecap: round;
     }
 
+    button > svg {
+        @apply h-6 w-6;
+    }
+
     input[type='checkbox'] {
+        @apply checkbox-primary checkbox;
     }
 
     input[type='radio'] {
-    }
-
-    button > svg {
-        @apply h-6 w-6;
+        @apply radio radio-primary radio-sm;
     }
 }
 
@@ -73,11 +75,7 @@
     }
 
     .btn {
-        @apply flex justify-center rounded border py-3 px-4 normal-case;
-    }
-
-    .btn-primary {
-        @apply border-none bg-primary text-white hover:bg-primary-hover;
+        @apply rounded normal-case;
     }
 }
 

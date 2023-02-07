@@ -1,10 +1,11 @@
-import { type GetServerSidePropsContext } from 'next';
+import { GetServerSidePropsContext } from 'next';
+import { PrismaAdapter } from '@next-auth/prisma-adapter';
+import { getServerSession, NextAuthOptions, DefaultSession } from 'next-auth';
+
 import AppleProvider from 'next-auth/providers/apple';
 import GoogleProvider from 'next-auth/providers/google';
 import TwitchProvider from 'next-auth/providers/twitch';
 import CredentialsProvider from 'next-auth/providers/credentials';
-import { PrismaAdapter } from '@next-auth/prisma-adapter';
-import { getServerSession, type NextAuthOptions, type DefaultSession } from 'next-auth';
 
 import { prisma } from './db';
 import { env } from '../env/server.mjs';

@@ -1,3 +1,3 @@
-import { type Product } from '@prisma/client';
+import { Product } from '@prisma/client';
 
 export type IProduct = Product;

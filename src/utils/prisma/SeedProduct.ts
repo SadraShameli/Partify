@@ -4,7 +4,7 @@ export default async function SeedProduct() {
     const product = await prisma.product.create({
         data: {
             name: 'Razer Basilisk Ultimate',
-            brandId: 1,
+            brandName: 'Razer',
             price: 124.99,
             stockCount: 6,
             color: 'Black',

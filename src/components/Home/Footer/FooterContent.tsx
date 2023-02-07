@@ -1,4 +1,4 @@
-import type { INavigation, INavigationLink } from './FooterTypes';
+import { INavigation, INavigationLink } from './FooterTypes';
 
 export const NavigationList: INavigation[] = [
     {

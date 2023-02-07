@@ -4,13 +4,13 @@ export default async function SeedCurrencies() {
     const currency = await prisma.currency.createMany({
         data: [
             {
-                currency: 'euro',
+                symbol: 'euro',
             },
             {
-                currency: 'dollar',
+                symbol: 'dollar',
             },
             {
-                currency: 'pound',
+                symbol: 'pound',
             },
         ],
     });
