@@ -1,8 +1,11 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+
 import Link from 'next/link';
+import { useState } from 'react';
 import { signIn } from 'next-auth/react';
-import { useForm, SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm, SubmitHandler } from 'react-hook-form';
 
 import Card from '../Card';
 import Routes from '../../utils/routes';
@@ -16,6 +19,8 @@ import TwitchIcon from '../../assets/icons/Twitch';
 import SignInIcon from '../../assets/icons/SignIn';
 
 export default function UserSignIn() {
+    const [errorMessage, setErrorMessage] = useState('');
+
     const {
         register,
         handleSubmit,
@@ -24,7 +29,12 @@ export default function UserSignIn() {
 
     // eslint-disable-next-line @typescript-eslint/require-await
     const onSubmit: SubmitHandler<UserSignInForm> = async (data) => {
-        console.log(data);
+        await signIn('credentials', {
+            username: data.email,
+            password: data.password,
+            callbackUrl: '/',
+            redirect: true,
+        });
     };
 
     return (
@@ -72,7 +82,7 @@ export default function UserSignIn() {
                             </Link>
                         </div>
 
-                        <button className='btn-primary btn' title='Login to your account'>
+                        <button className='btn-primary btn' title='Login to your account' type='submit'>
                             Login to your account
                         </button>
 

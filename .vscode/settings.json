@@ -13,6 +13,7 @@
         "superjson",
         "tailwindcss",
         "tanstack",
-        "TRPC"
+        "TRPC",
+        "uuidv"
     ]
 }

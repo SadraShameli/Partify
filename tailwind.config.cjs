@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors');
 
@@ -15,7 +16,7 @@ module.exports = {
         },
         extend: {
             fontFamily: {
-                sans: ['Inter var', 'SF Display', 'Lato', ...defaultTheme.fontFamily.sans],
+                sans: ['Inter var',  ...defaultTheme.fontFamily.sans],
             },
             container: {
                 center: true,

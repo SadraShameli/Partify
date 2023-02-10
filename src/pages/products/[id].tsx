@@ -4,7 +4,7 @@ import { InferGetServerSidePropsType, GetServerSidePropsContext } from 'next/typ
 
 import { api } from '../../utils/api';
 import { prisma } from '../../server/db';
-import { appRouter } from '../../server/api/routers/_app';
+import { appRouter } from '../../server/api/root';
 import ProductOverView from '../../components/Product/ProductOverView';
 
 export async function getServerSideProps(context: GetServerSidePropsContext<{ id: string }>) {

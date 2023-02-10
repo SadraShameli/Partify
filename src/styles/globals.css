@@ -40,6 +40,10 @@
         stroke-linecap: round;
     }
 
+    a > svg {
+        @apply h-6 w-6;
+    }
+
     button > svg {
         @apply h-6 w-6;
     }

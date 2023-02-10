@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import Link from 'next/link';
+import { useState } from 'react';
 import { signIn } from 'next-auth/react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm, SubmitHandler } from 'react-hook-form';
@@ -9,6 +10,7 @@ import { CheckBox } from '../CheckBox';
 import { InputField, InputInfoText } from '../InputField';
 import { UserSignUpSchema, UserSignUpForm } from './UserTypes';
 
+import { api } from '../../utils/api';
 import Routes from '../../utils/routes';
 import GoogleIcon from '../../assets/icons/Google';
 import AppleIcon from '../../assets/icons/Apple';
@@ -16,15 +18,20 @@ import TwitchIcon from '../../assets/icons/Twitch';
 import AccountInfoIcon from '../../assets/icons/AccountInfo';
 
 export default function UserSignUp() {
+    const [errorMessage, setErrorMessage] = useState('');
+    const createUserMutation = api.user.createUser.useMutation();
+
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm<UserSignUpForm>({ resolver: zodResolver(UserSignUpSchema), defaultValues: { terms: true } });
 
-    // eslint-disable-next-line @typescript-eslint/require-await
     const onSubmit: SubmitHandler<UserSignUpForm> = async (data) => {
-        console.log(data);
+        const result = await createUserMutation.mutateAsync(data);
+
+        if (result?.error) setErrorMessage(result.error);
+        else setErrorMessage('');
     };
 
     return (
@@ -68,6 +75,7 @@ export default function UserSignUp() {
 
                         <InputField placeholder='you@domain.com' title='Email address' type='email' {...register('email')}>
                             {errors.email && <InputInfoText>{errors.email?.message}</InputInfoText>}
+                            {errorMessage && <InputInfoText>{errorMessage}</InputInfoText>}
                         </InputField>
 
                         <InputField title='Password' type='password' {...register('password')}>

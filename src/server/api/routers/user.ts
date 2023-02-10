@@ -1,37 +1,45 @@
 import { z } from 'zod';
-import { createTRPCRouter, publicProcedure, protectedProcedure } from '../trpc';
+import argon2 from 'argon2';
+import { Prisma } from '@prisma/client';
+import { createTRPCRouter, publicProcedure } from '../trpc';
 
-import { commonSchema } from './../../../utils/zod/commonSchema';
-import { UserSignUpSchema } from './../../../components/User/UserTypes';
+import { commonSchema } from '../../../utils/zod/commonSchema';
+import { UserSignUpSchema } from '../../../components/User/UserTypes';
 
 export const userRouter = createTRPCRouter({
-    getAllusers: publicProcedure.query(({ ctx }) => {
-        return ctx.prisma.user.findMany();
-    }),
-
-    getUser: publicProcedure.input(z.object({ email: commonSchema.email })).query(({ ctx, input }) => {
-        return ctx.prisma.user.findFirst({
+    authorizeUser: publicProcedure.input(z.object({ email: commonSchema.email, password: commonSchema.password })).query(async ({ ctx, input }) => {
+        const user = await ctx.prisma.user.findFirst({
             where: {
                 email: input.email,
             },
         });
+
+        if (!user) return { error: "Email address doesn't exist" };
+        if (!user.password) return { error: 'No password exists for the email' };
+
+        const authorized = await argon2.verify(user.password, input.password);
+
+        if (authorized) return { status: true };
+        return { status: false };
     }),
 
-    createUser: protectedProcedure.input(UserSignUpSchema).mutation(({ ctx, input }) => {
-        return ctx.prisma.user.create({
-            data: {
-                email: input.email,
-            },
-        });
-    }),
-
-    hello: publicProcedure.input(z.object({ text: z.string() })).query(({ input }) => {
-        return {
-            greeting: `Hello ${input.text}`,
-        };
-    }),
-
-    getSecretMessage: protectedProcedure.query(() => {
-        return 'you can now see this secret message!';
+    createUser: publicProcedure.input(UserSignUpSchema).mutation(async ({ ctx, input }) => {
+        try {
+            await ctx.prisma.user.create({
+                data: {
+                    email: input.email,
+                    password: await argon2.hash(input.password),
+                    name: `${input.firstName} ${input.lastName}`,
+                },
+            });
+        } catch (e) {
+            if (e instanceof Prisma.PrismaClientKnownRequestError) {
+                if (e.code === 'P2002') {
+                    return {
+                        error: 'The email has already been taken',
+                    };
+                }
+            }
+        }
     }),
 });
