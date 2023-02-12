@@ -13,6 +13,7 @@ import CredentialsProvider from 'next-auth/providers/credentials';
 import { prisma } from './db';
 import { env } from '../env/server.mjs';
 import Routes from '../utils/routes';
+import { Prisma } from '@prisma/client';
 
 declare module 'next-auth' {
     interface Session extends DefaultSession {
@@ -26,36 +27,68 @@ export const authOptions: NextAuthOptions = {
     adapter: PrismaAdapter(prisma),
     pages: {
         signIn: Routes.signIn,
-        newUser: Routes.account,
+        newUser: '/',
         verifyRequest: Routes.verifyRequest,
     },
     session: {
         strategy: 'jwt',
     },
     callbacks: {
-        session({ session }) {
+        async session({ session, token }) {
+            if (!session.user.image && token.email) {
+                const user = await prisma.user.findUnique({
+                    select: {
+                        image: true,
+                    },
+                    where: {
+                        email: token.email,
+                    },
+                });
+
+                if (user?.image) {
+                    session.user.image = user.image;
+                }
+            }
             return session;
         },
-        jwt({ token, user }) {
-            if (user) {
-                token.id = user.id;
+        async signIn({ user, profile, account }) {
+            if (account?.type === 'oauth' && profile && 'picture' in profile && profile.picture && user.email) {
+                try {
+                    await prisma.user.update({
+                        data: {
+                            image: profile.picture,
+                        },
+                        where: {
+                            email: user.email,
+                        },
+                    });
+                } catch (e) {
+                    if (e instanceof Prisma.PrismaClientKnownRequestError) {
+                        if (e.code === 'P2025') {
+                            return true;
+                        }
+                    }
+                }
             }
 
-            return token;
+            return true;
         },
     },
     providers: [
         GoogleProvider({
             clientId: env.GOOGLE_CLIENT_ID,
             clientSecret: env.GOOGLE_CLIENT_SECRET,
+            allowDangerousEmailAccountLinking: true,
         }),
         AppleProvider({
             clientId: env.APPLE_ID,
             clientSecret: env.APPLE_SECRET,
+            allowDangerousEmailAccountLinking: true,
         }),
         TwitchProvider({
             clientId: env.TWITCH_CLIENT_ID,
             clientSecret: env.TWITCH_CLIENT_SECRET,
+            allowDangerousEmailAccountLinking: true,
         }),
         CredentialsProvider({
             name: 'Sign in',
@@ -72,29 +105,12 @@ export const authOptions: NextAuthOptions = {
                 }
 
                 if (!user.password) {
-                    throw new Error('No password exists for the email');
+                    throw new Error('No password exists for the email. Please set a password in your account dashboard.');
                 }
 
                 const authorized = await argon2.verify(user.password, credentials?.password as string);
 
                 if (authorized) {
-                    // const sessionToken = uuidv4();
-                    // const sessionExpiry = '2592000';
-
-                    // await prisma.session.create({
-                    //     data: {
-                    //         sessionToken: sessionToken,
-                    //         userId: user.id,
-                    //         expires: sessionExpiry,
-                    //     },
-                    // });
-
-                    // const cookies = new Cookies(req);
-
-                    // cookies.set('next-auth.session-token', sessionToken, {
-                    //     expires: sessionExpiry,
-                    // });
-
                     return {
                         id: user.id,
                         name: user.name,

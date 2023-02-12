@@ -14,12 +14,20 @@ export const userRouter = createTRPCRouter({
             },
         });
 
-        if (!user) return { error: "Email address doesn't exist" };
-        if (!user.password) return { error: 'No password exists for the email' };
+        if (!user) {
+            return { error: "Email address doesn't exist" };
+        }
+
+        if (!user.password) {
+            return { error: 'No password exists for the email. Please set your password in the account dashboard.' };
+        }
 
         const authorized = await argon2.verify(user.password, input.password);
 
-        if (authorized) return { status: true };
+        if (authorized) {
+            return { status: true };
+        }
+
         return { status: false };
     }),
 
@@ -36,7 +44,7 @@ export const userRouter = createTRPCRouter({
             if (e instanceof Prisma.PrismaClientKnownRequestError) {
                 if (e.code === 'P2002') {
                     return {
-                        error: 'The email has already been taken',
+                        error: 'This email has already been taken',
                     };
                 }
             }

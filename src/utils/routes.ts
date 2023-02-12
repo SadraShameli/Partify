@@ -1,5 +1,4 @@
 const Routes = {
-    error: '/error/',
     about: '/about/',
     privacyPolicy: '/legal/privacy-policy/',
     termsAndConditions: '/legal/terms-and-conditions/',
@@ -9,7 +8,7 @@ const Routes = {
     account: '/account/',
     checkout: '/checkout/',
     favorites: '/favorites/',
-};
+} as const;
 
 import { z } from 'zod';
 import formatErrors from './zod/formatErrors.mjs';

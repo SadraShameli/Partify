@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import Link from 'next/link';
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 import { signIn } from 'next-auth/react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm, SubmitHandler } from 'react-hook-form';
@@ -12,12 +13,13 @@ import { UserSignUpSchema, UserSignUpForm } from './UserTypes';
 
 import { api } from '../../utils/api';
 import Routes from '../../utils/routes';
-import GoogleIcon from '../../assets/icons/Google';
 import AppleIcon from '../../assets/icons/Apple';
+import GoogleIcon from '../../assets/icons/Google';
 import TwitchIcon from '../../assets/icons/Twitch';
 import AccountInfoIcon from '../../assets/icons/AccountInfo';
 
 export default function UserSignUp() {
+    const router = useRouter();
     const [errorMessage, setErrorMessage] = useState('');
     const createUserMutation = api.user.createUser.useMutation();
 
@@ -30,8 +32,19 @@ export default function UserSignUp() {
     const onSubmit: SubmitHandler<UserSignUpForm> = async (data) => {
         const result = await createUserMutation.mutateAsync(data);
 
-        if (result?.error) setErrorMessage(result.error);
-        else setErrorMessage('');
+        if (result?.error) {
+            setErrorMessage(result.error);
+        } else {
+            await signIn('credentials', {
+                username: data.email,
+                password: data.password,
+                callbackUrl: '/',
+                redirect: false,
+            });
+
+            await router.push('/');
+            setErrorMessage('');
+        }
     };
 
     return (
@@ -44,18 +57,18 @@ export default function UserSignUp() {
                     </h2>
 
                     <div className='grid gap-5'>
-                        <button className='btn-outline btn gap-2' type='button' onClick={() => signIn('google')}>
+                        <button className='btn-outline btn gap-2' type='button' onClick={() => signIn('google', { callbackUrl: '/' })}>
                             <GoogleIcon />
                             Sign in with Google
                         </button>
 
                         <div className='grid gap-5 sm:grid-cols-2 '>
-                            <button className='btn-outline btn gap-2' type='button' onClick={() => signIn('apple')}>
+                            <button className='btn-outline btn gap-2' type='button' onClick={() => signIn('apple', { callbackUrl: '/' })}>
                                 <AppleIcon />
                                 Sign in with Apple
                             </button>
 
-                            <button className='btn-outline btn gap-2' type='button' onClick={() => signIn('twitch')}>
+                            <button className='btn-outline btn gap-2' type='button' onClick={() => signIn('twitch', { callbackUrl: '/' })}>
                                 <TwitchIcon />
                                 Sign in with Twitch
                             </button>
@@ -64,25 +77,25 @@ export default function UserSignUp() {
                         <div className='divider'>or</div>
 
                         <div className='grid grid-cols-2 gap-5'>
-                            <InputField title='First name' {...register('firstName')}>
+                            <InputField autoComplete='given-name' title='First name' {...register('firstName')}>
                                 {errors.firstName && <InputInfoText>{errors.firstName?.message}</InputInfoText>}
                             </InputField>
 
-                            <InputField title='Last name' {...register('lastName')}>
+                            <InputField autoComplete='family-name' title='Last name' {...register('lastName')}>
                                 {errors.lastName && <InputInfoText>{errors.lastName?.message}</InputInfoText>}
                             </InputField>
                         </div>
 
-                        <InputField placeholder='you@domain.com' title='Email address' type='email' {...register('email')}>
+                        <InputField autoComplete='email' placeholder='you@domain.com' title='Email address' type='email' {...register('email')}>
                             {errors.email && <InputInfoText>{errors.email?.message}</InputInfoText>}
                             {errorMessage && <InputInfoText>{errorMessage}</InputInfoText>}
                         </InputField>
 
-                        <InputField title='Password' type='password' {...register('password')}>
+                        <InputField autoComplete='new-password' title='Password' type='password' {...register('password')}>
                             {errors.password && <InputInfoText>{errors.password?.message}</InputInfoText>}
                         </InputField>
 
-                        <InputField title='Confirm password' type='password' {...register('confirmPassword')}>
+                        <InputField autoComplete='new-password' title='Confirm password' type='password' {...register('confirmPassword')}>
                             {errors.confirmPassword && <InputInfoText>{errors.confirmPassword?.message}</InputInfoText>}
                         </InputField>
 
