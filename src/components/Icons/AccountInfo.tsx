@@ -1,6 +1,6 @@
-import { IIconProps } from '../../types/Icon';
+import { type SVGProps } from 'react';
 
-export default function AccountInfoIcon(props: IIconProps) {
+export default function AccountInfoIcon(props: SVGProps<SVGSVGElement>) {
     return (
         <svg fill='currentColor' viewBox='0 0 1024 1024' {...props}>
             <path d='M110.4 923.2c-56.8 0-102.4-48-102.4-106.4V285.6c0-58.4 45.6-106.4 102.4-106.4h800.8c56.8 0 102.4 48 102.4 106.4V816c0 58.4-45.6 106.4-102.4 106.4H110.4z m0-701.6c-34.4 0-61.6 28.8-61.6 64V816c0 35.2 28 64 61.6 64h800.8c34.4 0 61.6-28.8 61.6-64V285.6c0-35.2-28-64-61.6-64H110.4z' />

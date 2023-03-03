@@ -1,4 +1,4 @@
-import { forwardRef, InputHTMLAttributes } from 'react';
+import { forwardRef, type InputHTMLAttributes } from 'react';
 
 export interface ICardRadioProps extends InputHTMLAttributes<HTMLInputElement> {
     children?: React.ReactNode;

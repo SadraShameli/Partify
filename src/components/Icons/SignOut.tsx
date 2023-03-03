@@ -1,6 +1,6 @@
-import { IIconProps } from '../../types/Icon';
+import { type SVGProps } from 'react';
 
-export default function SignOutIcon(props: IIconProps) {
+export default function SignOutIcon(props: SVGProps<SVGSVGElement>) {
     return (
         <svg fill='none' viewBox='0 0 24 24' {...props}>
             <path d='M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4' />

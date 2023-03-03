@@ -1,4 +1,6 @@
-export default function formatErrors(error) {
+import { type ZodError } from 'zod';
+
+export default function formatErrors(error: ZodError<{ [x: string]: unknown }>) {
     const errors = error.format();
 
     return Object.entries(errors)

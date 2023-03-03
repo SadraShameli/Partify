@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { commonSchema } from '../../utils/zod/commonSchema';
+import { commonSchema } from '~/utils/zod/commonSchema';
 
 export const UserSignInSchema = z.object({
     email: commonSchema.email,

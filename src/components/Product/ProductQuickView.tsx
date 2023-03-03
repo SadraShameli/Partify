@@ -1,22 +1,22 @@
 import Image from 'next/image';
-import { GeoProps } from '../../hooks/useGeo';
-import { IProduct } from './ProductTypes';
+import { type IProduct } from './ProductTypes';
+import { GeoProps } from '~/hooks/useGeo';
 
-export default function ProductQuickView(props: IProduct) {
+export default function ProductQuickView({ product }: { product: IProduct }) {
     return (
         <div className='flex pt-10'>
             <div className='relative w-48'>
-                <Image className='img' src={props.image} alt={props.name} fill />
+                <Image className='img' src={product.image} alt={product.name} fill />
             </div>
 
             <form className='flex-auto p-6'>
                 <div className='flex flex-wrap'>
-                    <div className='flex-auto text-lg font-semibold text-primary'>{props.name}</div>
+                    <div className='flex-auto text-lg font-semibold text-primary'>{product.name}</div>
                     <p className='font-semibold text-info'>
                         {GeoProps.currentCurrency}
-                        {props.price}
+                        {product.price}
                     </p>
-                    <p className='w-full text-sm font-medium'>{props.stockCount ? 'In' : 'Out of'} stock</p>
+                    <p className='w-full text-sm font-medium'>{product.stockCount ? 'In' : 'Out of'} stock</p>
                 </div>
 
                 <div className='mt-4 mb-6 pb-6'>

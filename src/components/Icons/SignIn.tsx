@@ -1,6 +1,6 @@
-import { IIconProps } from '../../types/Icon';
+import { type SVGProps } from 'react';
 
-export default function SignInIcon(props: IIconProps) {
+export default function SignInIcon(props: SVGProps<SVGSVGElement>) {
     return (
         <svg fill='currentColor' viewBox='0 0 35 35' {...props}>
             <path d='M17.052,34.75a1.25,1.25,0,0,1,0-2.5,14.75,14.75,0,0,0,0-29.5,1.25,1.25,0,0,1,0-2.5,17.25,17.25,0,0,1,0,34.5Z' />

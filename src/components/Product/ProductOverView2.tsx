@@ -1,10 +1,11 @@
 import Image from 'next/image';
 
-import { GeoProps } from '../../hooks/useGeo';
-import { IProduct } from './ProductTypes';
+import { type IProduct } from './ProductTypes';
 import { GenerateRatingStars } from './ProductRating';
+
+import { GeoProps } from '~/hooks/useGeo';
+import { ProductStorageKeys } from '~/utils/constants';
 import UseProductStorage from './Hooks/UseProductStorage';
-import { ProductStorageKeys } from '../../assets/Constants';
 
 export default function ProductOverView2({ product }: { product: IProduct }) {
     const [isWishListed, addToWishList, removeFromWishList] = UseProductStorage(ProductStorageKeys.wishListedProducts, product);
@@ -24,9 +25,11 @@ export default function ProductOverView2({ product }: { product: IProduct }) {
                 </div>
 
                 <div className='mt-5 grid h-[36rem] grid-cols-3 gap-5'>
-                    <div className='relative'>
-                        <Image className='img' src={product.additionalImages[0]} alt={product.name} fill />
-                    </div>
+                    {product.additionalImages[0] && (
+                        <div className='relative'>
+                            <Image className='img' src={product.additionalImages[0]} alt={product.name} fill />
+                        </div>
+                    )}
 
                     <div className='grid gap-5'>
                         {product.additionalImages[1] && (

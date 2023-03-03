@@ -1,10 +1,11 @@
 import ProductCard from './ProductCard';
-import { IProduct } from './ProductTypes';
+import { type IProduct } from './ProductTypes';
 
 export default function ProductRecommendations({ products }: { products: IProduct[] }) {
     return (
-        <div>
+        <div className='pt-20'>
             <h2>Customers also purchased</h2>
+
             <div className='flex flex-wrap gap-5'>
                 {products.map((value, index) => (
                     <ProductCard key={index} {...value} />

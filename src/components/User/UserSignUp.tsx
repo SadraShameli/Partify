@@ -1,22 +1,24 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
+
 import Link from 'next/link';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { signIn } from 'next-auth/react';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm, SubmitHandler } from 'react-hook-form';
+import { useForm, type SubmitHandler } from 'react-hook-form';
 
-import Card from '../Card';
-import { CheckBox } from '../CheckBox';
-import { InputField, InputInfoText } from '../InputField';
-import { UserSignUpSchema, UserSignUpForm } from './UserTypes';
+import Card from '~/components/Card';
+import { CheckBox } from '~/components/Checkbox';
+import { InputField, InputInfoText } from '~/components/InputField';
 
-import { api } from '../../utils/api';
-import Routes from '../../utils/routes';
-import AppleIcon from '../../assets/icons/Apple';
-import GoogleIcon from '../../assets/icons/Google';
-import TwitchIcon from '../../assets/icons/Twitch';
-import AccountInfoIcon from '../../assets/icons/AccountInfo';
+import AppleIcon from '~/components/Icons/Apple';
+import GoogleIcon from '~/components/Icons/Google';
+import TwitchIcon from '~/components/Icons/Twitch';
+import AccountInfoIcon from '~/components/Icons/AccountInfo';
+
+import { type UserSignUpForm, UserSignUpSchema } from './UserTypes';
+import { api } from '~/utils/api';
+import Routes from '~/utils/routes';
 
 export default function UserSignUp() {
     const router = useRouter();

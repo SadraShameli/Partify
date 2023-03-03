@@ -1,4 +1,4 @@
-import { prisma } from '../../server/db';
+import { prisma } from '~/server/db';
 
 export default async function SeedCurrencies() {
     const currency = await prisma.currency.createMany({

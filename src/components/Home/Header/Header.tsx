@@ -1,15 +1,15 @@
 import Link from 'next/link';
-import Routes from '../../../utils/routes';
+import Routes from '~/utils/routes';
 
-import HomeIcon from '../../../assets/icons/Home';
-import HeartIcon from '../../../assets/icons/Heart';
-import BasketIcon from '../../../assets/icons/Basket';
-import SearchIcon from '../../../assets/icons/Search';
-import AccountIcon from '../../../assets/icons/Account';
-import DarkModeIcon from '../../../assets/icons/DarkMode';
-import LightModeIcon from '../../../assets/icons/LightMode';
+import HomeIcon from '~/components/Icons/Home';
+import HeartIcon from '~/components/Icons/Heart';
+import BasketIcon from '~/components/Icons/Basket';
+import SearchIcon from '~/components/Icons/Search';
+import AccountIcon from '~/components/Icons/Account';
+import DarkModeIcon from '~/components/Icons/DarkMode';
+import LightModeIcon from '~/components/Icons/LightMode';
 
-export default function NavigationBar() {
+export default function Header() {
     return (
         <nav className='fixed inset-x-0 top-0 z-[9999] bg-[rgba(255,255,255,0.72)] py-3 saturate-[200%] backdrop-blur-[20px] dark:bg-[rgba(0,0,0,0.72)]'>
             <div className='fill-none stroke-current text-sm all-children:items-center'>

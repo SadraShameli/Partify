@@ -1,15 +1,14 @@
 import Head from 'next/head';
 import { useEffect } from 'react';
-import { AppType } from 'next/app';
-import { Session } from 'next-auth';
+import { type AppType } from 'next/app';
+import { type Session } from 'next-auth';
 import { SessionProvider } from 'next-auth/react';
 
-import { api } from '../utils/api';
-import Footer from '../components/Home/Footer/Footer';
-import NavigationBar from '../components/Home/NavBar/NavBar';
+import { api } from '~/utils/api';
+import Footer from '~/components/Home/Footer/Footer';
+import Header from '~/components/Home/Header/Header';
 
-import '../styles/fonts.css';
-import '../styles/globals.css';
+import '~/styles/globals.css';
 
 let reloadInterval: NodeJS.Timer;
 
@@ -72,7 +71,7 @@ const MyApp: AppType<{ session: Session | null }> = ({ Component, pageProps: { s
             </Head>
 
             <SessionProvider session={session}>
-                <NavigationBar />
+                <Header />
 
                 <Component {...pageProps} />
 

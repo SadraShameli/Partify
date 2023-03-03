@@ -1,6 +1,6 @@
 import { useSession } from 'next-auth/react';
-import UserSignUp from '../components/User/UserSignUp';
-import AccountDashboard from '../components/Home/Account/AccountDashboard';
+import UserSignUp from '~/components/User/UserSignUp';
+import AccountDashboard from '~/components/Home/Account/AccountDashboard';
 
 export default function Account() {
     const { data: session } = useSession();

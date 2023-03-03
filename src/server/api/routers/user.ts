@@ -3,8 +3,8 @@ import argon2 from 'argon2';
 import { Prisma } from '@prisma/client';
 import { createTRPCRouter, publicProcedure } from '../trpc';
 
-import { commonSchema } from '../../../utils/zod/commonSchema';
-import { UserSignUpSchema } from '../../../components/User/UserTypes';
+import { commonSchema } from '~/utils/zod/commonSchema';
+import { UserSignUpSchema } from '~/components/User/UserTypes';
 
 export const userRouter = createTRPCRouter({
     authorizeUser: publicProcedure.input(z.object({ email: commonSchema.email, password: commonSchema.password })).query(async ({ ctx, input }) => {

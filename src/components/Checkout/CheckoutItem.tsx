@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { IProduct } from '../Product/ProductTypes';
-import { GeoProps } from '../../hooks/useGeo';
+import { type IProduct } from '~/components/Product/ProductTypes';
+import { GeoProps } from '~/hooks/useGeo';
 
 export default function CheckoutItem({ product, onRemove }: { product: IProduct; onRemove: () => void }) {
     return (

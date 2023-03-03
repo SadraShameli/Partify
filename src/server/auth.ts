@@ -1,9 +1,8 @@
 import argon2 from 'argon2';
-import Cookies from 'cookies';
-import { v4 as uuidv4 } from 'uuid';
-import { GetServerSidePropsContext } from 'next';
+import { Prisma } from '@prisma/client';
+import { type GetServerSidePropsContext } from 'next';
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
-import { getServerSession, NextAuthOptions, DefaultSession } from 'next-auth';
+import { getServerSession, type NextAuthOptions, type DefaultSession } from 'next-auth';
 
 import AppleProvider from 'next-auth/providers/apple';
 import GoogleProvider from 'next-auth/providers/google';
@@ -11,9 +10,8 @@ import TwitchProvider from 'next-auth/providers/twitch';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
 import { prisma } from './db';
-import { env } from '../env/server.mjs';
-import Routes from '../utils/routes';
-import { Prisma } from '@prisma/client';
+import { env } from '~/env.mjs';
+import Routes from '~/utils/routes';
 
 declare module 'next-auth' {
     interface Session extends DefaultSession {

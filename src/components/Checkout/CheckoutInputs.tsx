@@ -2,8 +2,8 @@
 import { forwardRef } from 'react';
 // import countries from 'countries-list';
 
-import { InputField } from '../InputField';
-import { IInputProps } from '../InputField';
+import { InputField } from '~/components/InputField';
+import { type IInputProps } from '~/components/InputField';
 
 // function FlagEmojiToPNG({ flag }: { flag: string }) {
 //     const countryCode = Array.from(flag, (codeUnit) => codeUnit.codePointAt(0))

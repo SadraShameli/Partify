@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { GeoProps } from '../../hooks/useGeo';
-import { IProduct } from './ProductTypes';
+import { GeoProps } from '~/hooks/useGeo';
+import { type IProduct } from './ProductTypes';
 
 export default function ProductCard(product: IProduct) {
     return (
@@ -12,7 +12,7 @@ export default function ProductCard(product: IProduct) {
             <div className='mt-3 flex justify-between gap-5 text-sm font-semibold'>
                 <div>
                     <p>{product.name}</p>
-                    <p className='mt-1 font-light text-base-300'>Black</p>
+                    <p className='mt-1 font-light'>Black</p>
                 </div>
 
                 <p>{`${GeoProps.currentCurrency}${product.price}`}</p>

@@ -2,13 +2,13 @@ import Image from 'next/image';
 import NoSSR from 'react-no-ssr';
 import { useState } from 'react';
 
-import { IProduct } from './ProductTypes';
+import { type IProduct } from './ProductTypes';
 import { GenerateRatingStars } from './ProductRating';
 import UseProductStorage from './Hooks/UseProductStorage';
 
 import { Accordion, AccordionContent } from '../Accordion';
-import { ProductStorageKeys } from '../../assets/Constants';
-import { GeoProps } from '../../hooks/useGeo';
+import { ProductStorageKeys } from '~/utils/constants';
+import { GeoProps } from '~/hooks/useGeo';
 
 export default function ProductOverView({ product }: { product: IProduct }) {
     const [isWishListed, addToWishList, removeFromWishList] = UseProductStorage(ProductStorageKeys.wishListedProducts, product);
@@ -101,7 +101,7 @@ export default function ProductOverView({ product }: { product: IProduct }) {
                                 </button>
 
                                 <button
-                                    className='hover:border-current btn ml-2'
+                                    className='btn-outline btn ml-2 border-dark'
                                     onClick={() => {
                                         if (isWishListed) {
                                             removeFromWishList(product);

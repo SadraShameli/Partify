@@ -2,17 +2,18 @@
 import NoSSR from 'react-no-ssr';
 import { useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm, SubmitHandler } from 'react-hook-form';
+import { useForm, type SubmitHandler } from 'react-hook-form';
 
 import CheckoutItem from './CheckoutItem';
 import { DeliveryMethods } from './CheckoutTypes';
-import { CheckoutSchema, Checkout, DeliveryMethod } from './CheckoutTypes';
+import { CheckoutSchema, type Checkout, type DeliveryMethod } from './CheckoutTypes';
 
-import { CardRadio } from '../CardRadio';
-import { GeoProps } from '../../hooks/useGeo';
-import { InputField, InputInfoText } from '../InputField';
-import { ProductStorageKeys } from '../../assets/Constants';
-import UseProductStorage from '../Product/Hooks/UseProductStorage';
+import { CardRadio } from '~/components/CardRadio';
+import { InputField, InputInfoText } from '~/components/InputField';
+import UseProductStorage from '~/components/Product/Hooks/UseProductStorage';
+
+import { GeoProps } from '~/hooks/useGeo';
+import { ProductStorageKeys } from '~/utils/constants';
 
 export default function CheckoutForm() {
     const [, , removeProduct, products] = UseProductStorage(ProductStorageKeys.addedToBag);

@@ -2,7 +2,6 @@
     "name": "partify",
     "version": "0.1.0",
     "private": true,
-    "type": "module",
     "scripts": {
         "build": "next build",
         "dev": "next dev",
@@ -36,6 +35,7 @@
         "@next/bundle-analyzer": "^13.1.6",
         "@tailwindcss/typography": "^0.5.9",
         "@types/cookies": "^0.7.7",
+        "@types/eslint": "^8.21.1",
         "@types/node": "^18.13.0",
         "@types/prettier": "^2.7.2",
         "@types/react": "^18.0.26",

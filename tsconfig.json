@@ -3,7 +3,8 @@
         "target": "ESNext",
         "lib": ["dom", "dom.iterable", "esnext"],
         "allowJs": true,
-        "skipLibCheck": false,
+        "checkJs": true,
+        "skipLibCheck": true,
         "strict": true,
         "strictNullChecks": true,
         "forceConsistentCasingInFileNames": true,
@@ -14,8 +15,13 @@
         "resolveJsonModule": true,
         "isolatedModules": true,
         "jsx": "preserve",
-        "incremental": true
+        "incremental": true,
+        "noUncheckedIndexedAccess": true,
+        "baseUrl": ".",
+        "paths": {
+            "~/*": ["./src/*"]
+        }
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.cjs", "**/*.mjs", "tailwind.config.cjs"],
+    "include": [".eslintrc.cjs", "next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.cjs", "**/*.mjs"],
     "exclude": ["node_modules"]
 }

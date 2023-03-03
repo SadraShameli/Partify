@@ -1,9 +1,11 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 /* eslint-disable @typescript-eslint/no-var-requires */
 const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors');
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+const config = {
     content: ['./src/**/*.{ts,tsx}'],
     theme: {
         borderRadius: {
@@ -16,7 +18,7 @@ module.exports = {
         },
         extend: {
             fontFamily: {
-                sans: ['Inter var',  ...defaultTheme.fontFamily.sans],
+                sans: ['Inter var', ...defaultTheme.fontFamily.sans],
             },
             container: {
                 center: true,
@@ -72,3 +74,5 @@ module.exports = {
         },
     ],
 };
+
+module.exports = config;
